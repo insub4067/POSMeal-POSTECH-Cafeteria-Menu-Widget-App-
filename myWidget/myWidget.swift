@@ -24,7 +24,7 @@ struct Provider: TimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let entry = SimpleEntry(date: date)
-        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 4, to: Date())
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdate!))
         completion(timeline)
     }
@@ -158,6 +158,7 @@ struct myWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             myWidgetEntryView(entry: entry)
+                .environment(\.colorScheme, .light)
         }
         .configurationDisplayName("포스밀 위젯")
         .description("설정된 식당에 대한 오늘의 메뉴를 보여줍니다.")
@@ -165,12 +166,3 @@ struct myWidget: Widget {
     }
     
 }
-
-//Preview
-//struct myWidget_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        myWidgetEntryView(entry: SimpleEntry(date: Date()))
-//            .previewContext(WidgetPreviewContext(family: .systemMedium))
-//    }
-//}
