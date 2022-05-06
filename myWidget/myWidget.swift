@@ -164,5 +164,4 @@ struct myWidget: Widget {
         .description("설정된 식당에 대한 오늘의 메뉴를 보여줍니다.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
-    
 }

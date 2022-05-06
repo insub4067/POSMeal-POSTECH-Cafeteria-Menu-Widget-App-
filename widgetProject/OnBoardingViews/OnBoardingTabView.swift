@@ -21,7 +21,7 @@ struct OnBoardingTabView: View {
             OnBoardingPageView(
                 imageName: "gear",
                 title: "설정",
-                subtitle: "우측 하단 기어 아이콘을 눌러 위젯에 보일 내용을 선택하세요. 선택하신 후에 위젯을 지웠다 다시 추가해주세요."
+                subtitle: "우측 하단 \"위젯설정\"을 눌러 위젯에 보일 내용을 선택하세요. 선택하신 후에 위젯을 지웠다 다시 추가하세요."
             )
             OnBoardingLastPageView(
                 imageName: "face.smiling",

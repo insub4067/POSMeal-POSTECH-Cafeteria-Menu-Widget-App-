@@ -127,7 +127,7 @@ struct ContentView: View {
                     self.selectedMeal = "LUNCH"
                     UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
                 }
-                Button("식식"){
+                Button("석식"){
                     self.selectedMeal = "DINNER"
                     UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
                 }
