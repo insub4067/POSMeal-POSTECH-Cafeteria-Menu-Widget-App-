@@ -17,7 +17,7 @@
 
 - [@Woody](https://github.com/insub4067) : DEVELOP & PLAN
 - [@Songcool](https://github.com/song-cool) : DESIGN
-- [@Bean](https://www.github.com/) : BACKEND API
+- [@Bean](https://github.com/Park-Wonbin) : BACKEND API
 
 
 ## :framed_picture: Demo
