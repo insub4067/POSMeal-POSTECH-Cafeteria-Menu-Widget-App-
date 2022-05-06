@@ -1,5 +1,42 @@
-# NanoChallenge1-Afternoon-Woody-POSMEAL
-![KakaoTalk_Photo_2022-05-06-01-38-26](https://user-images.githubusercontent.com/85481204/166978051-db9101f5-f33e-46ab-8164-e22c8f32409d.png)
-![KakaoTalk_Photo_2022-05-06-01-21-22](https://user-images.githubusercontent.com/85481204/166969097-7f6a447a-b946-49ec-ac07-dbe8cda12694.jpeg)
-![KakaoTalk_Photo_2022-05-06-01-24-40](https://user-images.githubusercontent.com/85481204/166969274-176adce3-4c3e-445d-a0fb-32e51e4901d0.jpeg)
-![KakaoTalk_Photo_2022-05-06-01-24-43](https://user-images.githubusercontent.com/85481204/166969281-d0685887-d516-46e4-8847-d951db98e665.jpeg)
+
+![Logo](https://dummyimage.com/1000x300/000/fff.png)
+
+
+# :iphone: 포스밀 
+
+포항공대 내 식당들의 메뉴를 위젯으로 알려주는 어플입니다
+
+
+## :pushpin: Features
+
+- On Boarding Page 
+- Widget 으로 식당 메뉴 보기
+- 원하는 식당의 메뉴 보기 
+
+## :people_hugging: Authors
+
+- [@Woody](https://github.com/insub4067) : DEVELOP & PLAN
+- [@Songcool](https://github.com/song-cool) : DESIGN
+- [@Bean](https://www.github.com/) : BACKEND API
+
+
+## :framed_picture: Demo
+
+Insert gif or link to demo
+
+
+## :fireworks: Screenshots
+
+![App Screenshot](https://velog.velcdn.com/images/kim4067/post/41edeb1a-def5-487b-a0f8-c685024a1a93/image.jpeg)
+
+![App Screenshot]
+(https://velog.velcdn.com/images/kim4067/post/32dfb8c6-2f3e-4696-97ac-2cbd1fe6910f/image.jpeg)
+
+![App Screenshot]
+(https://velog.velcdn.com/images/kim4067/post/863c18ef-0954-431c-a812-c0623cb56f59/image.jpeg)
+
+
+## :sparkles: Skills & Tech Stack
+- SwiftUI
+- WidgetKI
+- httpRequest
