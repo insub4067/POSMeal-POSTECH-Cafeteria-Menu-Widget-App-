@@ -11,8 +11,7 @@
 ## :pushpin: Features
 
 - On Boarding Page 
-- Widget 으로 식당 메뉴 보기
-- 원하는 식당의 메뉴 보기 
+- Widget 으로 원하는 식당의 메뉴 보기
 
 ## :people_hugging: Authors
 
