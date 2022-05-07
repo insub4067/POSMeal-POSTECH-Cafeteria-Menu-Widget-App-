@@ -33,4 +33,4 @@ Insert gif or link to demo
 ## :sparkles: Skills & Tech Stack
 - SwiftUI
 - WidgetKI
-- httpRequest
+- URLSession
