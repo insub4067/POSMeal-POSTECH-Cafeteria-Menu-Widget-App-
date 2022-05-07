@@ -11,6 +11,7 @@ import SwiftUI
 struct Provider: TimelineProvider {
     let date = Date()
 
+    //PlACEHOLDER
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: date)
     }
@@ -20,11 +21,13 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
+    //VIEW REFRESH
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let entry = SimpleEntry(date: date)
-        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 4, to: Date())
+        //BYADDING = UNIT, VALUE = HOW LONG, TO = FROM WHEN
+        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdate!))
         completion(timeline)
     }

@@ -9,7 +9,11 @@ import SwiftUI
 class Network: ObservableObject {
     
     //Define
-    @Published var menus: [Menu] = []
+    @Published var todaysMenus: [Menu] = []
+    @Published var tomrrowsMenus: [Menu] = []
+    @Published var dayAfterTomorrowMenus: [Menu] = []
+    var dateDict: [String:String] = [:]
+
     var BREAKFAST_A: [String] = []
     var BREAKFAST_B: [String] = []
     var LUNCH: [String] = []
@@ -17,16 +21,23 @@ class Network: ObservableObject {
     var STAFF: [String] = []
     var INTERNATIONAL: [String] = []
     
-    //CURRENT DATE
-    func currentDate() -> [String: String]{
+    //GET DATE of TODAY || TOMORROW
+    @discardableResult
+    func getDate(of: String) -> [String:String]{
         //Define
         let calendar = Calendar.current
-        let date = Date()
+        let today = Date()
 
-        let year = String(calendar.component(.year, from: date))
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let weekday = String(calendar.component(.weekday, from: date))
+        let dateDict: [String:Date] = [
+            "today" : today,
+            "tomorrow" : calendar.date(byAdding: .day, value: 1, to: today)!,
+            "dayAfterTomorrow" : calendar.date(byAdding: .day, value: 2, to: today)!
+        ]
+
+        let year = String(calendar.component(.year, from: dateDict[of]!))
+        let month = calendar.component(.month, from: dateDict[of]!)
+        let day = calendar.component(.day, from: dateDict[of]!)
+        let weekday = String(calendar.component(.weekday, from: dateDict[of]!))
 
         var refinedMonth = String(month)
         var refinedDay = String(day)
@@ -51,28 +62,29 @@ class Network: ObservableObject {
         }
         
         //Store UserDefault Data
-        let dateDict = ["year": year, "month": refinedMonth, "day": refinedDay, "weekday": dayDict[weekday]!]
-        UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(dateDict, forKey: "CURRENTDATE")
+        let result = ["year": year, "month": refinedMonth, "day": refinedDay, "weekday": dayDict[weekday]!]
+        UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(result, forKey: "CURRENTDATE")
+        self.dateDict = result
         
         //Return
-        return dateDict
+        return result
     }
     
     //GET MENUS OF A DAY
-    func getMenus() {
+    func getMenus(of: String) -> Void {
         
         //Define
-        let date = currentDate()
-        let year = date["year"]!
-        let month = date["month"]!
-        let day = date["day"]!
+        getDate(of: of)
+        let year = self.dateDict["year"]!
+        let month = self.dateDict["month"]!
+        let day = self.dateDict["day"]!
 
-        //Request
+        //URLRequest
         guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
-        //Decode
+        //URLSession
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Request error: ", error)
@@ -86,10 +98,22 @@ class Network: ObservableObject {
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     do {
+                        //Decode
                         let decodedMenus = try JSONDecoder().decode([Menu].self, from: data)
-                        self.menus = []
-                        self.menus = decodedMenus
-                        self.devideData()
+                        
+                        //if today
+                        if of == "today"{
+                            self.todaysMenus = decodedMenus
+                            self.saveAtUserDefaults()
+                        }
+                        //if tomorrow
+                        else if of == "tomorrow"{
+                            self.tomrrowsMenus = decodedMenus
+                        }
+                        else if of == "dayAfterTomorrow"{
+                            self.dayAfterTomorrowMenus = decodedMenus
+                        }
+                        
                     } catch let error {
                         print("Error decoding: ", error)
                     }
@@ -100,8 +124,9 @@ class Network: ObservableObject {
     }
     
     //Devide Data
-    func devideData(){
-        for menu in menus {
+    func saveAtUserDefaults(){
+        
+        for menu in todaysMenus {
             //BREAKFAST_A
             if menu.type == "BREAKFAST_A"{
                 BREAKFAST_A.removeAll()
