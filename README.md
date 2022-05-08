@@ -28,12 +28,12 @@ Insert gif or link to demo
 
 ## :fireworks: Screenshots
 |메인|설정|위젯
-|------|---|---|
+|----|---|---|
 |![App Screenshot](https://velog.velcdn.com/images/kim4067/post/41edeb1a-def5-487b-a0f8-c685024a1a93/image.jpeg)|![App Screenshot](https://velog.velcdn.com/images/kim4067/post/32dfb8c6-2f3e-4696-97ac-2cbd1fe6910f/image.jpeg)|![App Screenshot](https://velog.velcdn.com/images/kim4067/post/863c18ef-0954-431c-a812-c0623cb56f59/image.jpeg)|
 
-|다크모드|다크모드
-|------|---|
-|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279245-18fcfed6-f62a-4596-86e4-a240949c504a.png)|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279239-4e0909c6-102c-42ba-aa77-0a98ecc4afb8.png)|
+|다크모드|다크모드|다크모드
+|---|---|---|
+|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279245-18fcfed6-f62a-4596-86e4-a240949c504a.png)|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279239-4e0909c6-102c-42ba-aa77-0a98ecc4afb8.png)|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279303-f6fe76bc-85c4-4bc7-ba24-3da50d5bd4e6.png)|
 
 
 
