@@ -33,7 +33,7 @@ Insert gif or link to demo
 
 |다크모드|다크모드
 |------|---|
-|![Simulator Screen Shot - iPhone 13 - ![Simulator Screen Shot - iPhone 13 - 2022-05-08 at 11 30 19](https://user-images.githubusercontent.com/85481204/167279245-18fcfed6-f62a-4596-86e4-a240949c504a.png)|2022-05-08 at 11 30 13](https://user-images.githubusercontent.com/85481204/167279239-4e0909c6-102c-42ba-aa77-0a98ecc4afb8.png)|
+|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279245-18fcfed6-f62a-4596-86e4-a240949c504a.png)|![App Screenshot](https://user-images.githubusercontent.com/85481204/167279239-4e0909c6-102c-42ba-aa77-0a98ecc4afb8.png)|
 
 
 
