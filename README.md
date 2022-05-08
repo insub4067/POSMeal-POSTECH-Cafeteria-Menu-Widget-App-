@@ -15,9 +15,9 @@
 
 ## :people_hugging: Authors
 
-- [@Woody](https://github.com/insub4067) : DEVELOP & PLAN
-- [@Songcool](https://github.com/song-cool) : DESIGN
-- [@Bean](https://github.com/Park-Wonbin) : BACKEND API
+[@Woody](https://github.com/insub4067) : DEVELOP & PLAN  
+[@Songcool](https://github.com/song-cool) : DESIGN  
+[@Bean](https://github.com/Park-Wonbin) : BACKEND API  
 
 
 ## :framed_picture: Demo
@@ -26,15 +26,11 @@ Insert gif or link to demo
 
 
 ## :fireworks: Screenshots
-
-![App Screenshot](https://velog.velcdn.com/images/kim4067/post/41edeb1a-def5-487b-a0f8-c685024a1a93/image.jpeg)
-
-![App Screenshot](https://velog.velcdn.com/images/kim4067/post/32dfb8c6-2f3e-4696-97ac-2cbd1fe6910f/image.jpeg)
-
-![App Screenshot](https://velog.velcdn.com/images/kim4067/post/863c18ef-0954-431c-a812-c0623cb56f59/image.jpeg)
-
+|메인|설정|위젯
+|------|---|---|
+|![App Screenshot](https://velog.velcdn.com/images/kim4067/post/41edeb1a-def5-487b-a0f8-c685024a1a93/image.jpeg)|![App Screenshot](https://velog.velcdn.com/images/kim4067/post/32dfb8c6-2f3e-4696-97ac-2cbd1fe6910f/image.jpeg)|![App Screenshot](https://velog.velcdn.com/images/kim4067/post/863c18ef-0954-431c-a812-c0623cb56f59/image.jpeg)|
 
 ## :sparkles: Skills & Tech Stack
 - SwiftUI
 - WidgetKI
-- httpRequest
+- URLSession
