@@ -15,7 +15,6 @@ struct widgetProjectApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(network)
-                .environment(\.colorScheme, .light)
         }
     }
 }

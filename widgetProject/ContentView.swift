@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     //Define
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var network: Network
     @AppStorage("isFirstLaunching") var isFirstLaunching: Bool = true
     @State private var showSheet = false
@@ -20,18 +21,23 @@ struct ContentView: View {
         let _: () = network.getMenus(of: "tomorrow")
         let _: () = network.getMenus(of: "dayAfterTomorrow")
         
+        let lightModeBackgroundColor = Color(red: 242/255, green: 242/255, blue: 246/255)
+        
+        let lightGray = UIColor(Color(red: 200/255, green: 200/255, blue: 200/255))
+        let darkGray = UIColor(Color(red: 120/255, green: 120/255, blue: 120/255))
+        
         NavigationView {
             TabView{
-                TodayMenuView()
-                TomorrowMenuView()
-                DayAfterTomorrowView()
+                MenuView(date: "today")
+                MenuView(date: "tomorrow")
+                MenuView(date: "dayAfterTomorrow")
             }
             .onAppear{
-              UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color(red: 120/255, green: 120/255, blue: 120/255))
-              UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color(red: 200/255, green: 200/255, blue: 200/255))
+                UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ? lightGray : darkGray
+                UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-            .background(Color(red: 242/255, green: 242/255, blue: 246/255))
+            .background(colorScheme == .dark ? Color.black : lightModeBackgroundColor)
             .navigationBarHidden(true)
             .toolbar{
                 ToolbarItemGroup(placement: ToolbarItemPlacement.bottomBar){

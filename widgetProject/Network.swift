@@ -12,7 +12,6 @@ class Network: ObservableObject {
     @Published var todaysMenus: [Menu] = []
     @Published var tomrrowsMenus: [Menu] = []
     @Published var dayAfterTomorrowMenus: [Menu] = []
-    var dateDict: [String:String] = [:]
 
     var BREAKFAST_A: [String] = []
     var BREAKFAST_B: [String] = []
@@ -64,7 +63,6 @@ class Network: ObservableObject {
         //Store UserDefault Data
         let result = ["year": year, "month": refinedMonth, "day": refinedDay, "weekday": dayDict[weekday]!]
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(result, forKey: "CURRENTDATE")
-        self.dateDict = result
         
         //Return
         return result
@@ -74,10 +72,10 @@ class Network: ObservableObject {
     func getMenus(of: String) -> Void {
         
         //Define
-        getDate(of: of)
-        let year = self.dateDict["year"]!
-        let month = self.dateDict["month"]!
-        let day = self.dateDict["day"]!
+        let result = getDate(of: of)
+        let year = result["year"]!
+        let month = result["month"]!
+        let day = result["day"]!
 
         //URLRequest
         guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }
@@ -185,4 +183,5 @@ class Network: ObservableObject {
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(STAFF, forKey: "STAFF")
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(INTERNATIONAL, forKey: "INTERNATIONAL")
     }
+    
 }
