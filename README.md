@@ -12,6 +12,7 @@
 
 - On Boarding Page 
 - Widget 으로 원하는 식당의 메뉴 보기
+- 라이트 모드, 다크 모드 컬러 변화
 
 ## :people_hugging: Authors
 
