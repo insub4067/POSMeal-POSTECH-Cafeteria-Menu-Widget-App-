@@ -12,6 +12,7 @@ struct MenuView: View {
     @EnvironmentObject var network: Network
     
     let date: String
+    let menuIndex: Int
     
     let myDict = [
         "BREAKFAST_A" : "조식",
@@ -33,16 +34,19 @@ struct MenuView: View {
 
     var body: some View {
         let date = network.getDate(of: date)
+        
         let month = date["month"]!
         let day = date["day"]!
         let weekday = date["weekday"]!
         
+        let darkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 100/255, green: 100/255, blue: 100/255)
+        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
         let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeDarkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
         let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
         
+        let menusList = [network.todaysMenus, network.tomrrowsMenus, network.dayAfterTomorrowMenus]
+                
         VStack {
             Text("\(month)월 \(day)일 \(weekday)")
                 .font(.title)
@@ -50,7 +54,7 @@ struct MenuView: View {
                 .padding(.vertical, 10)
             ScrollView {
                 VStack(spacing: 17) {
-                    ForEach(network.todaysMenus) { menu in
+                    ForEach(menusList[menuIndex]) { menu in
                         //CARD
                         VStack(alignment: .leading) {
                             //Title
@@ -62,7 +66,7 @@ struct MenuView: View {
                                 //Time
                                 Text(scheduleDict[menu.type]!)
                                     .font(.system(size: 12))
-                                    .foregroundColor(colorScheme == .dark ? timeDarkModeForeground : timeLightModeForeground)
+                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
                                     .padding(.vertical, 3)
                                     .padding(.horizontal, 5)
                                     .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
@@ -74,6 +78,7 @@ struct MenuView: View {
                                     let check = food.isMain == true ? "*" : ""
                                     Text(food.name_kor + check)
                                         .font(.system(size: 15))
+                                        .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
                                 }
                             }
                         }

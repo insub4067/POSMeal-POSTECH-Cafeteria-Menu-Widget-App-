@@ -28,12 +28,12 @@ struct ContentView: View {
         
         NavigationView {
             TabView{
-                MenuView(date: "today")
-                MenuView(date: "tomorrow")
-                MenuView(date: "dayAfterTomorrow")
+                MenuView(date: "today", menuIndex: 0)
+                MenuView(date: "tomorrow", menuIndex: 1)
+                MenuView(date: "dayAfterTomorrow", menuIndex: 2)
             }
             .onAppear{
-                UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ? lightGray : darkGray
+                UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ?  lightGray : darkGray
                 UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))

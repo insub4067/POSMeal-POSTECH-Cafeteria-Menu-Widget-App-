@@ -27,7 +27,7 @@ struct Provider: TimelineProvider {
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let entry = SimpleEntry(date: date)
         //BYADDING = UNIT, VALUE = HOW LONG, TO = FROM WHEN
-        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())
+        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdate!))
         completion(timeline)
     }
@@ -60,10 +60,10 @@ struct widgetCardView: View{
             "INTERNATIONAL" : "더 블루힐"
         ]
         
+        let darkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 100/255, green: 100/255, blue: 100/255)
+        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
         let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeDarkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
         let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
         
         VStack(alignment: .leading){
@@ -82,7 +82,7 @@ struct widgetCardView: View{
                 //Time
                 Text(scheduleDict[selectedMeal ?? "LUNCH"]!)
                     .font(.system(size:12))
-                    .foregroundColor(colorScheme == .dark ? timeDarkModeForeground : timeLightModeForeground)
+                    .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
                     .padding(.vertical, 3)
                     .padding(.horizontal, 10)
                     .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
@@ -94,6 +94,7 @@ struct widgetCardView: View{
                     ForEach(FOODS!, id: \.self){
                         food in
                         Text(food)
+                            .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
                     }
                 }
                 else if FOODS == nil {
