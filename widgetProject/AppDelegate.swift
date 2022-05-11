@@ -11,6 +11,8 @@ import UserNotifications
 
 @available(iOS 10, *)
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // WHILE APP IS ON FOREGROUND
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         if let messageID = userInfo[gcmMessageIDKey]{
@@ -26,6 +28,18 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("apsData : ", apsData)
         }
         completionHandler([[.banner, .badge, .sound]])
+        Network().getMenus(of: "today")
+        print("MESSAGE RECIEVED ON FOREGROUND")
+    }
+    
+    // EXECUTE WHEN USER CLICKS NOTIFICATION WHILE APP IS ON BACKGROUND
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        if let messageID = userInfo[gcmMessageIDKey]{
+            print("Message ID from userNotificationCenter didRecieve : ", messageID)
+        }
+        completionHandler()
+        Network().getMenus(of: "today")
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("앱이 APNS에 등록되었음")
@@ -34,19 +48,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFailToContinueUserActivityWithType userActivityType: String, error: Error) {
         print("APNS가 등록에 실패 하였음")
     }
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        if let messageID = userInfo[gcmMessageIDKey]{
-            print("Message ID from userNotificationCenter didRecieve : ", messageID)
-        }
-        completionHandler()
-    }
 }
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        let devieToken: [String:String] = ["token": fcmToken ?? ""]
-        print("Device Token : ", devieToken)
+        let deviceToken: [String:String] = ["token": fcmToken ?? ""]
+        print("Device Token : ", deviceToken)
     }
 }
 
@@ -56,6 +63,7 @@ class AppDelegate: NSObject, UIApplicationDelegate{
     let data1Key = "DATA1"
     let data2Key = "DATA2"
     
+    // Register for remote notifications
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -63,7 +71,6 @@ class AppDelegate: NSObject, UIApplicationDelegate{
         if #available(iOS 10.0, *){
             UNUserNotificationCenter.current().delegate = self
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions, completionHandler: {_, _ in})
         } else {
@@ -73,7 +80,6 @@ class AppDelegate: NSObject, UIApplicationDelegate{
         application.registerForRemoteNotifications()
         return true
     }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let messageID = userInfo[gcmMessageIDKey]{
             print("Message ID : \(messageID)")

@@ -25,7 +25,8 @@ class Network: ObservableObject {
     func getDate(of: String) -> [String:String]{
         //Define
         let calendar = Calendar.current
-        let today = Date()
+        var today = Date()
+        today = calendar.date(byAdding: .hour, value: 9, to: today)!
 
         let dateDict: [String:Date] = [
             "today" : today,
@@ -84,8 +85,8 @@ class Network: ObservableObject {
 
         //URLSession
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                print("Request error: ", error)
+            if error != nil {
+//                print("Request error: ", error)
                 return
             }
 

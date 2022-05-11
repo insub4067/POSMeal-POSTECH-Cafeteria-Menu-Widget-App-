@@ -17,12 +17,7 @@ struct ContentView: View {
 
     var body: some View {
         
-        let _: () = network.getMenus(of: "today")
-        let _: () = network.getMenus(of: "tomorrow")
-        let _: () = network.getMenus(of: "dayAfterTomorrow")
-        
-        let lightModeBackgroundColor = Color(red: 242/255, green: 242/255, blue: 246/255)
-        
+        let lightModeBackgroundColor = Color(red: 242/255, green: 242/255, blue: 246/255)        
         let lightGray = UIColor(Color(red: 200/255, green: 200/255, blue: 200/255))
         let darkGray = UIColor(Color(red: 120/255, green: 120/255, blue: 120/255))
         
@@ -84,6 +79,9 @@ struct ContentView: View {
             }
         }
         .onAppear{
+            network.getMenus(of: "today")
+            network.getMenus(of: "tomorrow")
+            network.getMenus(of: "dayAfterTomorrow")
             UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
         }
         .fullScreenCover(isPresented: self.$isFirstLaunching){
