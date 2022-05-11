@@ -62,7 +62,7 @@ class AppDelegate: NSObject, UIApplicationDelegate{
     let aps = "aps"
     let data1Key = "DATA1"
     let data2Key = "DATA2"
-    
+
     // Register for remote notifications
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
