@@ -39,6 +39,6 @@ Insert gif or link to demo
 
 ## :sparkles: Skills & Tech Stack
 - SwiftUI
-- WidgetKI
+- WidgetKIT
 - URLSession
 - FIREBASE CLOUD MESSAGING
