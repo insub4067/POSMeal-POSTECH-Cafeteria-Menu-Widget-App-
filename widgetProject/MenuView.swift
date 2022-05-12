@@ -39,7 +39,7 @@ struct MenuView: View {
         let day = date["day"]!
         let weekday = date["weekday"]!
         
-        let darkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
+        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
         let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
         let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)

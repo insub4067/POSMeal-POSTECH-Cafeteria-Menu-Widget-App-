@@ -51,7 +51,7 @@ struct widgetCardView: View{
     var body: some View {
         
         let _ = network.getDate(of: "today")
-        let darkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
+        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
         let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
         let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
@@ -61,13 +61,15 @@ struct widgetCardView: View{
             //Title
             HStack{
                 //Title
-                if selectedMeal != nil {
-                    Text("\(mealNameDict[selectedMeal!]!)")
-                        .bold()
-                }
-                else if selectedMeal == nil {
-                    Text("에러")
-                        .bold()
+                Group{
+                    if selectedMeal != nil {
+                        Text("\(mealNameDict[selectedMeal!]!)")
+                            .bold()
+                    }
+                    else if selectedMeal == nil {
+                        Text("에러")
+                            .bold()
+                    }
                 }
                 Spacer()
                 //Time
@@ -82,10 +84,18 @@ struct widgetCardView: View{
             //Contents
             VStack(alignment: .leading, spacing: 2){
                 if FOODS != nil{
-                    ForEach(FOODS!, id: \.self){
-                        food in
-                        Text(food)
-                            .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                    ForEach(FOODS!.indices, id: \.self){
+                        foodIndex in
+                        if foodIndex < 4 {
+                            Text(FOODS![foodIndex])
+                                .font(.system(size: 14))
+                                .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                        }
+                        else if foodIndex == 4 {
+                            Text(FOODS![foodIndex] + (FOODS!.count > 5 ? " 외 \(FOODS!.count - 5)개" : ""))
+                                .font(.system(size: 14))
+                                .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                        }
                     }
                 }
                 else if FOODS == nil {
@@ -112,6 +122,7 @@ struct myWidgetEntryView : View {
     let CURRENTDATE = UserDefaults(suiteName: "group.com.kim.widgetProject")!.dictionary(forKey: "CURRENTDATE") as! [String:String]?
     var SELECTEDMEAL = UserDefaults(suiteName: "group.com.kim.widgetProject")!.string(forKey: "SELECTEDMEAL") as String?
     let currentHour = Calendar.current.component(.hour, from: Date())
+//    let selectedMeal = SELECTEDMEAL == "ONTIME" ? returnMealOnTime() : SELECTEDMEAL
     let scheduleDictMEDIUM = [
         "BREAKFAST_A" : "07:30 ~ 09:30",
         "BREAKFAST_B" : "07:30 ~ 09:30",
@@ -125,8 +136,8 @@ struct myWidgetEntryView : View {
         "BREAKFAST_B" : "~ 09:30",
         "LUNCH" : "~ 13:30",
         "DINNER" : "~ 19:00",
-        "STAFF" : "~ 13:00",
-        "INTERNATIONAL" : "~ 13:30"
+        "STAFF" : "13:00",
+        "INTERNATIONAL" : "13:30"
     ]
     let mealNameDict = [
         "BREAKFAST_A" : "조식",
@@ -157,6 +168,11 @@ struct myWidgetEntryView : View {
             )
         }
     }
+    
+//    func returnMealOnTime(){
+//        currenHour = Calendar.current.component(.hour, from: Date())
+//        if
+//    }
 }
 
 @main
