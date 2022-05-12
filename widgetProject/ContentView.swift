@@ -76,6 +76,10 @@ struct ContentView: View {
                     self.selectedMeal = "INTERNATIONAL"
                     UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
                 }
+                Button("시간에 맞추기"){
+                    self.selectedMeal = "ONTIME"
+                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                }
             }
         }
         .onAppear{

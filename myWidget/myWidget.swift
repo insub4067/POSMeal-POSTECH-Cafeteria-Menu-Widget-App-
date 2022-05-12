@@ -42,24 +42,15 @@ struct widgetCardView: View{
     //Define
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var network: Network
+    @State var FOODS: [String]? = []
     let CURRENTDATE: [String:String]?
     let scheduleDict: [String:String]
-    let selectedMeal : String?
-    @State var FOODS: [String]? = []
+    let selectedMeal: String?
+    let mealNameDict: [String:String]
     
     var body: some View {
         
         let _ = network.getDate(of: "today")
-        
-        let myDict = [
-            "BREAKFAST_A" : "조식",
-            "BREAKFAST_B" : "간단식",
-            "LUNCH" : "중식",
-            "DINNER" : "석식",
-            "STAFF" : "위즈덤",
-            "INTERNATIONAL" : "더 블루힐"
-        ]
-        
         let darkModeForeground = Color(red: 171/255, green: 171/255, blue: 171/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
         let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
@@ -71,7 +62,7 @@ struct widgetCardView: View{
             HStack{
                 //Title
                 if selectedMeal != nil {
-                    Text("\(myDict[selectedMeal!]!)")
+                    Text("\(mealNameDict[selectedMeal!]!)")
                         .bold()
                 }
                 else if selectedMeal == nil {
@@ -119,7 +110,8 @@ struct myWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     var entry: Provider.Entry
     let CURRENTDATE = UserDefaults(suiteName: "group.com.kim.widgetProject")!.dictionary(forKey: "CURRENTDATE") as! [String:String]?
-    let SELECTEDMEAL = UserDefaults(suiteName: "group.com.kim.widgetProject")!.string(forKey: "SELECTEDMEAL") as String?
+    var SELECTEDMEAL = UserDefaults(suiteName: "group.com.kim.widgetProject")!.string(forKey: "SELECTEDMEAL") as String?
+    let currentHour = Calendar.current.component(.hour, from: Date())
     let scheduleDictMEDIUM = [
         "BREAKFAST_A" : "07:30 ~ 09:30",
         "BREAKFAST_B" : "07:30 ~ 09:30",
@@ -136,6 +128,14 @@ struct myWidgetEntryView : View {
         "STAFF" : "~ 13:00",
         "INTERNATIONAL" : "~ 13:30"
     ]
+    let mealNameDict = [
+        "BREAKFAST_A" : "조식",
+        "BREAKFAST_B" : "간단식",
+        "LUNCH" : "중식",
+        "DINNER" : "석식",
+        "STAFF" : "위즈덤",
+        "INTERNATIONAL" : "더 블루힐"
+    ]
     
     @ViewBuilder
     var body: some View {
@@ -145,19 +145,15 @@ struct myWidgetEntryView : View {
             widgetCardView(
                 CURRENTDATE: CURRENTDATE,
                 scheduleDict: scheduleDictSMALL,
-                selectedMeal: SELECTEDMEAL
-            )
-        case .systemMedium:
-            widgetCardView(
-                CURRENTDATE: CURRENTDATE,
-                scheduleDict: scheduleDictMEDIUM,
-                selectedMeal: SELECTEDMEAL
+                selectedMeal: SELECTEDMEAL,
+                mealNameDict: mealNameDict
             )
         default:
             widgetCardView(
                 CURRENTDATE: CURRENTDATE,
                 scheduleDict: scheduleDictMEDIUM,
-                selectedMeal: SELECTEDMEAL
+                selectedMeal: SELECTEDMEAL,
+                mealNameDict: mealNameDict
             )
         }
     }
