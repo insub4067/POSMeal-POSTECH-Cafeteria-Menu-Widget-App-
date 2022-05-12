@@ -11,9 +11,11 @@
 ## :pushpin: Features
 
 - On Boarding Page 
-- Widget 으로 원하는 식당의 메뉴 보기
 - 라이트 모드, 다크 모드 지원
-- 12시 정각 이후 메뉴 업데이트 이후 알림 제공
+- Widget 에서 원하는 식당의 메뉴 보기
+- 현재 시간에 맞는 메뉴를 자동으로 Widget에 업데이트
+- 메뉴 업데이트 알림 서비스
+
 
 ## :people_hugging: Authors
 
