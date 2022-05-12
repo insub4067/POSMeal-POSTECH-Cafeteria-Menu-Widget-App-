@@ -12,7 +12,8 @@
 
 - On Boarding Page 
 - Widget 으로 원하는 식당의 메뉴 보기
-- 라이트 모드, 다크 모드 컬러 변화
+- 라이트 모드, 다크 모드 지원
+- 12시 정각 이후 메뉴 업데이트 이후 알림 제공
 
 ## :people_hugging: Authors
 
