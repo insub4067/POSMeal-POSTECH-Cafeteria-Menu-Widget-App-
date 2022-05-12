@@ -25,8 +25,7 @@ class Network: ObservableObject {
     func getDate(of: String) -> [String:String]{
         //Define
         let calendar = Calendar.current
-        var today = Date()
-        today = calendar.date(byAdding: .hour, value: 9, to: today)!
+        let today = Date()
 
         let dateDict: [String:Date] = [
             "today" : today,
