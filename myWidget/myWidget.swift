@@ -122,7 +122,6 @@ struct myWidgetEntryView : View {
     let CURRENTDATE = UserDefaults(suiteName: "group.com.kim.widgetProject")!.dictionary(forKey: "CURRENTDATE") as! [String:String]?
     var SELECTEDMEAL = UserDefaults(suiteName: "group.com.kim.widgetProject")!.string(forKey: "SELECTEDMEAL") as String?
     let currentHour = Calendar.current.component(.hour, from: Date())
-//    let selectedMeal = SELECTEDMEAL == "ONTIME" ? returnMealOnTime() : SELECTEDMEAL
     let scheduleDictMEDIUM = [
         "BREAKFAST_A" : "07:30 ~ 09:30",
         "BREAKFAST_B" : "07:30 ~ 09:30",
@@ -151,28 +150,41 @@ struct myWidgetEntryView : View {
     @ViewBuilder
     var body: some View {
         
+        let selectedMeal = SELECTEDMEAL == "ONTIME" ? returnMealOnTime() : SELECTEDMEAL
+        
         switch family{
         case .systemSmall:
             widgetCardView(
                 CURRENTDATE: CURRENTDATE,
                 scheduleDict: scheduleDictSMALL,
-                selectedMeal: SELECTEDMEAL,
+                selectedMeal: selectedMeal,
                 mealNameDict: mealNameDict
             )
         default:
             widgetCardView(
                 CURRENTDATE: CURRENTDATE,
                 scheduleDict: scheduleDictMEDIUM,
-                selectedMeal: SELECTEDMEAL,
+                selectedMeal: selectedMeal,
                 mealNameDict: mealNameDict
             )
         }
     }
     
-//    func returnMealOnTime(){
-//        currenHour = Calendar.current.component(.hour, from: Date())
-//        if
-//    }
+    func returnMealOnTime() -> String{
+        let currenHour = Calendar.current.component(.hour, from: Date())
+        var result = ""
+        
+        if 0 <= currenHour && currenHour < 9{
+            result = "BREAKFAST_A"
+        }
+        else if 9 <= currenHour && currenHour < 14 {
+            result = "LUNCH"
+        }
+        else if 14 <= currenHour && currenHour <= 23{
+            result = "DINNER"
+        }
+        return result
+    }
 }
 
 @main
