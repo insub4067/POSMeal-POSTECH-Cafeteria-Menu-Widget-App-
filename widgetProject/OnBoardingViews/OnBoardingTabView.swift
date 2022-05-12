@@ -19,14 +19,9 @@ struct OnBoardingTabView: View {
                 subtitle: "총 3일치의 메뉴를 보여드립니다. 페이지를 넘겨서 확인하세요."
             )
             OnBoardingPageView(
-                imageName: "arrow.clockwise",
-                title: "새로고침",
-                subtitle: "데이터가 제대로 보이지 않는 다면 좌측 하단 새로고침 아이콘을 눌러주세요."
-            )
-            OnBoardingPageView(
                 imageName: "gear",
                 title: "설정",
-                subtitle: "우측 하단 \"위젯설정\"을 눌러 위젯에 보일 내용을 선택하세요. 선택하셨다면 위젯을 지웠다 다시 추가하세요."
+                subtitle: "하단 \"위젯설정\"을 눌러 위젯에 보일 내용을 선택하세요. 선택하셨다면 위젯을 지웠다 다시 추가하세요."
             )
             OnBoardingLastPageView(
                 imageName: "iphone.homebutton",

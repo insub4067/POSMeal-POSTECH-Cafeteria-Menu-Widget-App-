@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     //Define
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var network: Network
     @AppStorage("isFirstLaunching") var isFirstLaunching: Bool = true
     @State private var showSheet = false
@@ -36,12 +37,6 @@ struct ContentView: View {
             .navigationBarHidden(true)
             .toolbar{
                 ToolbarItemGroup(placement: ToolbarItemPlacement.bottomBar){
-                    //REFRESH BUTTON
-                    Button{
-                        self.network.getMenus(of: "today")
-                    } label: {
-                        Image(systemName: "arrow.clockwise")
-                    }
                     //WIDGET CONFIG BUTTON
                     Button{
                         self.showSheet = true
@@ -80,6 +75,15 @@ struct ContentView: View {
                     self.selectedMeal = "ONTIME"
                     UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
                 }
+            }
+        }
+        .onChange(of: scenePhase){
+            newPhase in
+            if newPhase == .active {
+                network.getMenus(of: "today")
+                network.getMenus(of: "tomorrow")
+                network.getMenus(of: "dayAfterTomorrow")
+                UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
             }
         }
         .onAppear{
