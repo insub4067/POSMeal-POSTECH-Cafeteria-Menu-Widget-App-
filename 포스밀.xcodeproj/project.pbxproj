@@ -15,7 +15,7 @@
 		C63A3B582822A2D300FBCF96 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63A3B572822A2D300FBCF96 /* SwiftUI.framework */; };
 		C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B5A2822A2D300FBCF96 /* myWidget.swift */; };
 		C63A3B5D2822A2D400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B5C2822A2D400FBCF96 /* Assets.xcassets */; };
-		C63A3B612822A2D400FBCF96 /* myWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C63A3B612822A2D400FBCF96 /* myWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C65FDDAF2823B0BB00BE164E /* OnBoardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDAE2823B0BB00BE164E /* OnBoardingTabView.swift */; };
 		C65FDDB12823B0D800BE164E /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB02823B0D800BE164E /* OnBoardingPageView.swift */; };
 		C65FDDB32823B0E600BE164E /* OnBoardingLastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB22823B0E600BE164E /* OnBoardingLastPageView.swift */; };
@@ -311,6 +311,7 @@
 /* Begin PBXTargetDependency section */
 		C63A3B602822A2D400FBCF96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = C63A3B522822A2D300FBCF96 /* myWidgetExtension */;
 			targetProxy = C63A3B5F2822A2D400FBCF96 /* PBXContainerItemProxy */;
 		};
@@ -455,9 +456,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject;
 				PRODUCT_NAME = "포스밀";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -488,9 +490,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject;
 				PRODUCT_NAME = "포스밀";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -519,6 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.myWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -547,6 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.myWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

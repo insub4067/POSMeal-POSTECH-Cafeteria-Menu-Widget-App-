@@ -31,6 +31,8 @@ struct ContentView: View {
             .onAppear{
                 UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ?  lightGray : darkGray
                 UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
+                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+                AppDelegate.orientationLock = .portrait
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             .background(colorScheme == .dark ? Color.black : lightModeBackgroundColor)

@@ -33,9 +33,3 @@ struct OnBoardingTabView: View {
         .tabViewStyle(PageTabViewStyle())
     }
 }
-
-//struct OnBoardingTabView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnBoardingTabView()
-//    }
-//}

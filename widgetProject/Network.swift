@@ -88,7 +88,6 @@ class Network: ObservableObject {
 //                print("Request error: ", error)
                 return
             }
-
             guard let response = response as? HTTPURLResponse else { return }
             
             if response.statusCode == 200 {
@@ -120,7 +119,6 @@ class Network: ObservableObject {
         }
         dataTask.resume()
     }
-    
     //Devide Data
     func saveAtUserDefaults(){
         
@@ -183,5 +181,4 @@ class Network: ObservableObject {
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(STAFF, forKey: "STAFF")
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(INTERNATIONAL, forKey: "INTERNATIONAL")
     }
-    
 }
