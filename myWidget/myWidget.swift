@@ -41,7 +41,6 @@ struct SimpleEntry: TimelineEntry {
 struct widgetCardView: View{
     //Define
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var network: Network
     @State var FOODS: [String]? = []
     let CURRENTDATE: [String:String]?
     let scheduleDict: [String:String]
@@ -50,7 +49,6 @@ struct widgetCardView: View{
     
     var body: some View {
         
-        let _ = network.getDate(of: "today")
         let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
         let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
@@ -190,12 +188,10 @@ struct myWidgetEntryView : View {
 @main
 struct myWidget: Widget {
     let kind: String = "포스밀 위젯"
-    var network = Network()
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             myWidgetEntryView(entry: entry)
-                .environmentObject(network)
         }
         .configurationDisplayName("포스밀 위젯")
         .description("설정된 식당에 대한 오늘의 메뉴를 보여줍니다.")

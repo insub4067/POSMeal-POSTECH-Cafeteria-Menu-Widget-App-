@@ -14,7 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var network: Network
     @AppStorage("isFirstLaunching") var isFirstLaunching: Bool = true
     @State private var showSheet = false
-    @State private var selectedMeal = "LUNCH"
+    @State private var selectedMeal = "ONTIME"
 
     var body: some View {
         
@@ -29,8 +29,10 @@ struct ContentView: View {
                 MenuView(date: "dayAfterTomorrow", menuIndex: 2)
             }
             .onAppear{
+                // TabView Page Indicator
                 UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ?  lightGray : darkGray
                 UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
+                // Lock on Portrait Mode
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
                 AppDelegate.orientationLock = .portrait
             }

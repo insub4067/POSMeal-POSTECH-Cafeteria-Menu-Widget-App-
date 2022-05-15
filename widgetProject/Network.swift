@@ -24,19 +24,22 @@ class Network: ObservableObject {
     @discardableResult
     func getDate(of: String) -> [String:String]{
         //Define
+        let date = of
         let calendar = Calendar.current
         let today = Date()
-
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
+        let dayAfterTomorrow = calendar.date(byAdding: .day, value: 2, to: today)!
+        
         let dateDict: [String:Date] = [
             "today" : today,
-            "tomorrow" : calendar.date(byAdding: .day, value: 1, to: today)!,
-            "dayAfterTomorrow" : calendar.date(byAdding: .day, value: 2, to: today)!
+            "tomorrow" : tomorrow,
+            "dayAfterTomorrow" : dayAfterTomorrow
         ]
 
-        let year = String(calendar.component(.year, from: dateDict[of]!))
-        let month = calendar.component(.month, from: dateDict[of]!)
-        let day = calendar.component(.day, from: dateDict[of]!)
-        let weekday = String(calendar.component(.weekday, from: dateDict[of]!))
+        let year = String(calendar.component(.year, from: dateDict[date]!))
+        let month = calendar.component(.month, from: dateDict[date]!)
+        let day = calendar.component(.day, from: dateDict[date]!)
+        let weekday = String(calendar.component(.weekday, from: dateDict[date]!))
 
         var refinedMonth = String(month)
         var refinedDay = String(day)
@@ -70,12 +73,12 @@ class Network: ObservableObject {
     
     //GET MENUS OF A DAY
     func getMenus(of: String) -> Void {
-        
         //Define
-        let result = getDate(of: of)
-        let year = result["year"]!
-        let month = result["month"]!
-        let day = result["day"]!
+        let date = of
+        let returnedDate = getDate(of: date)
+        let year = returnedDate["year"]!
+        let month = returnedDate["month"]!
+        let day = returnedDate["day"]!
 
         //URLRequest
         guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }

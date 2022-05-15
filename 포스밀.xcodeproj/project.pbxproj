@@ -26,8 +26,6 @@
 		C6CB935428258252005D143E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB935328258252005D143E /* MenuView.swift */; };
 		C6CC13472822A72000D3EA1A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
 		C6CC13492822A75400D3EA1A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
-		C6CC134A2822A8BB00D3EA1A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
-		C6CC134B2822A8E700D3EA1A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,8 +127,8 @@
 				C6947820282A93980087F11C /* AppDelegate.swift */,
 				C6CB935328258252005D143E /* MenuView.swift */,
 				C6CC13462822A72000D3EA1A /* Network.swift */,
-				C679DCD1282A1AD400D87E97 /* GoogleService-Info.plist */,
 				C6CC13482822A75400D3EA1A /* MenuModel.swift */,
+				C679DCD1282A1AD400D87E97 /* GoogleService-Info.plist */,
 				C65FDDAB2823AFFA00BE164E /* OnBoardingViews */,
 				C63A3B452822A26400FBCF96 /* Assets.xcassets */,
 				C63A3B472822A26400FBCF96 /* Preview Content */,
@@ -300,9 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CC134A2822A8BB00D3EA1A /* Network.swift in Sources */,
 				C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */,
-				C6CC134B2822A8E700D3EA1A /* MenuModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
