@@ -145,6 +145,7 @@ struct widgetMediumCardView: View{
                         .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
                         .cornerRadius(10)
                 }
+                
                 //Contents
                 VStack(alignment: .leading, spacing: 2){
                     if LUNCH_FOODS != nil{
@@ -170,14 +171,13 @@ struct widgetMediumCardView: View{
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
-            .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
             .onAppear{
                 self.LUNCH_FOODS = []
                 self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
             }
             
             Divider()
-                .padding()
+                .padding(.vertical)
             
             VStack(alignment: .leading){
                 //Title
@@ -195,6 +195,7 @@ struct widgetMediumCardView: View{
                         .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
                         .cornerRadius(10)
                 }
+
                 //Contents
                 VStack(alignment: .leading, spacing: 2){
                     if DINNER_FOODS != nil{
@@ -220,13 +221,13 @@ struct widgetMediumCardView: View{
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
-            .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
             .onAppear{
                 self.DINNER_FOODS = []
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
-
         }
+        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+
     }
 }
 
@@ -262,6 +263,7 @@ struct widgetLargeCardView: View{
                         .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
                         .cornerRadius(10)
                 }
+                
                 //Contents
                 VStack(alignment: .leading, spacing: 2){
                     if LUNCH_FOODS != nil{
@@ -287,15 +289,14 @@ struct widgetLargeCardView: View{
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
-            .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
             .onAppear{
                 self.LUNCH_FOODS = []
                 self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
             }
             
             Divider()
-                .padding()
-            
+                .padding(.horizontal)
+                
             VStack(alignment: .leading){
                 //Title
                 HStack{
@@ -337,12 +338,13 @@ struct widgetLargeCardView: View{
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
-            .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
             .onAppear{
                 self.DINNER_FOODS = []
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
         }
+        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+
     }
 }
 
