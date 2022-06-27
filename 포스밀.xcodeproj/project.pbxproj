@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34ADE23E286A161B000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADE23D286A161B000D8D03 /* Assets.xcassets */; };
+		34ADE244286A161B000D8D03 /* posmealWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34ADE249286A161B000D8D03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE248286A161B000D8D03 /* ContentView.swift */; };
+		34ADE24B286A161B000D8D03 /* _______App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE24A286A161B000D8D03 /* _______App.swift */; };
+		34ADE24D286A161B000D8D03 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE24C286A161B000D8D03 /* ComplicationController.swift */; };
+		34ADE24F286A161C000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADE24E286A161C000D8D03 /* Assets.xcassets */; };
+		34ADE252286A161C000D8D03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADE251286A161C000D8D03 /* Preview Assets.xcassets */; };
+		34ADE256286A161C000D8D03 /* posmealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34ADE23B286A1619000D8D03 /* posmealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
 		C63A3B442822A26400FBCF96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B432822A26400FBCF96 /* ContentView.swift */; };
 		C63A3B462822A26400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
@@ -29,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		34ADE245286A161B000D8D03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34ADE242286A161B000D8D03;
+			remoteInfo = "posmealWatch WatchKit Extension";
+		};
+		34ADE254286A161C000D8D03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34ADE23A286A1619000D8D03;
+			remoteInfo = posmealWatch;
+		};
 		C63A3B5F2822A2D400FBCF96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
@@ -39,6 +61,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		34ADE25A286A161C000D8D03 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				34ADE244286A161B000D8D03 /* posmealWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34ADE25E286A161C000D8D03 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				34ADE256286A161C000D8D03 /* posmealWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B652822A2D400FBCF96 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +97,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34ADE23B286A1619000D8D03 /* posmealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = posmealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34ADE23D286A161B000D8D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "posmealWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34ADE248286A161B000D8D03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34ADE24A286A161B000D8D03 /* _______App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_______App.swift"; sourceTree = "<group>"; };
+		34ADE24C286A161B000D8D03 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		34ADE24E286A161C000D8D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34ADE251286A161C000D8D03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34ADE253286A161C000D8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
 		C63A3B432822A26400FBCF96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +130,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		34ADE240286A161B000D8D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3B2822A26400FBCF96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,12 +158,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34ADE23C286A1619000D8D03 /* posmealWatch */ = {
+			isa = PBXGroup;
+			children = (
+				34ADE23D286A161B000D8D03 /* Assets.xcassets */,
+			);
+			path = posmealWatch;
+			sourceTree = "<group>";
+		};
+		34ADE247286A161B000D8D03 /* posmealWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				34ADE248286A161B000D8D03 /* ContentView.swift */,
+				34ADE24A286A161B000D8D03 /* _______App.swift */,
+				34ADE24C286A161B000D8D03 /* ComplicationController.swift */,
+				34ADE24E286A161C000D8D03 /* Assets.xcassets */,
+				34ADE253286A161C000D8D03 /* Info.plist */,
+				34ADE250286A161C000D8D03 /* Preview Content */,
+			);
+			path = "posmealWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		34ADE250286A161C000D8D03 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				34ADE251286A161C000D8D03 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		C63A3B352822A26400FBCF96 = {
 			isa = PBXGroup;
 			children = (
 				C6CC134D2822A9CD00D3EA1A /* myWidgetExtension.entitlements */,
 				C63A3B402822A26400FBCF96 /* widgetProject */,
 				C63A3B592822A2D300FBCF96 /* myWidget */,
+				34ADE23C286A1619000D8D03 /* posmealWatch */,
+				34ADE247286A161B000D8D03 /* posmealWatch WatchKit Extension */,
 				C63A3B542822A2D300FBCF96 /* Frameworks */,
 				C63A3B3F2822A26400FBCF96 /* Products */,
 			);
@@ -114,6 +205,8 @@
 			children = (
 				C63A3B3E2822A26400FBCF96 /* 포스밀.app */,
 				C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */,
+				34ADE23B286A1619000D8D03 /* posmealWatch.app */,
+				34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,6 +269,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		34ADE23A286A1619000D8D03 /* posmealWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34ADE25B286A161C000D8D03 /* Build configuration list for PBXNativeTarget "posmealWatch" */;
+			buildPhases = (
+				34ADE239286A1619000D8D03 /* Resources */,
+				34ADE25A286A161C000D8D03 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34ADE246286A161B000D8D03 /* PBXTargetDependency */,
+			);
+			name = posmealWatch;
+			productName = posmealWatch;
+			productReference = 34ADE23B286A1619000D8D03 /* posmealWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		34ADE242286A161B000D8D03 /* posmealWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34ADE257286A161C000D8D03 /* Build configuration list for PBXNativeTarget "posmealWatch WatchKit Extension" */;
+			buildPhases = (
+				34ADE23F286A161B000D8D03 /* Sources */,
+				34ADE240286A161B000D8D03 /* Frameworks */,
+				34ADE241286A161B000D8D03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "posmealWatch WatchKit Extension";
+			productName = "posmealWatch WatchKit Extension";
+			productReference = 34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		C63A3B3D2822A26400FBCF96 /* 포스밀 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C63A3B4C2822A26400FBCF96 /* Build configuration list for PBXNativeTarget "포스밀" */;
@@ -184,11 +311,13 @@
 				C63A3B3B2822A26400FBCF96 /* Frameworks */,
 				C63A3B3C2822A26400FBCF96 /* Resources */,
 				C63A3B652822A2D400FBCF96 /* Embed App Extensions */,
+				34ADE25E286A161C000D8D03 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C63A3B602822A2D400FBCF96 /* PBXTargetDependency */,
+				34ADE255286A161C000D8D03 /* PBXTargetDependency */,
 			);
 			name = "포스밀";
 			packageProductDependencies = (
@@ -223,9 +352,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					34ADE23A286A1619000D8D03 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					34ADE242286A161B000D8D03 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					C63A3B3D2822A26400FBCF96 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -252,11 +387,30 @@
 			targets = (
 				C63A3B3D2822A26400FBCF96 /* 포스밀 */,
 				C63A3B522822A2D300FBCF96 /* myWidgetExtension */,
+				34ADE23A286A1619000D8D03 /* posmealWatch */,
+				34ADE242286A161B000D8D03 /* posmealWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		34ADE239286A1619000D8D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34ADE23E286A161B000D8D03 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34ADE241286A161B000D8D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34ADE252286A161C000D8D03 /* Preview Assets.xcassets in Resources */,
+				34ADE24F286A161C000D8D03 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3C2822A26400FBCF96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +432,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		34ADE23F286A161B000D8D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34ADE249286A161B000D8D03 /* ContentView.swift in Sources */,
+				34ADE24B286A161B000D8D03 /* _______App.swift in Sources */,
+				34ADE24D286A161B000D8D03 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3A2822A26400FBCF96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +469,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		34ADE246286A161B000D8D03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34ADE242286A161B000D8D03 /* posmealWatch WatchKit Extension */;
+			targetProxy = 34ADE245286A161B000D8D03 /* PBXContainerItemProxy */;
+		};
+		34ADE255286A161C000D8D03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34ADE23A286A1619000D8D03 /* posmealWatch */;
+			targetProxy = 34ADE254286A161C000D8D03 /* PBXContainerItemProxy */;
+		};
 		C63A3B602822A2D400FBCF96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -314,6 +488,120 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		34ADE258286A161C000D8D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"posmealWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "posmealWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "posmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		34ADE259286A161C000D8D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"posmealWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "posmealWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "posmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		34ADE25C286A161C000D8D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = posmealWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = posmealWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kim.widgetProject;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		34ADE25D286A161C000D8D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = posmealWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = posmealWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kim.widgetProject;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		C63A3B4A2822A26400FBCF96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,7 +726,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "--------Info.plist";
@@ -472,7 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "--------Info.plist";
@@ -504,7 +792,7 @@
 				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";
@@ -533,7 +821,7 @@
 				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";
@@ -557,6 +845,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		34ADE257286A161C000D8D03 /* Build configuration list for PBXNativeTarget "posmealWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34ADE258286A161C000D8D03 /* Debug */,
+				34ADE259286A161C000D8D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34ADE25B286A161C000D8D03 /* Build configuration list for PBXNativeTarget "posmealWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34ADE25C286A161C000D8D03 /* Debug */,
+				34ADE25D286A161C000D8D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C63A3B392822A26400FBCF96 /* Build configuration list for PBXProject "포스밀" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
