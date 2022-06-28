@@ -8,11 +8,22 @@ import SwiftUI
 
 class Network: ObservableObject {
     
+
+    
     //Define
     @Published var todaysMenus: [Menu] = []
     @Published var tomrrowsMenus: [Menu] = []
     @Published var dayAfterTomorrowMenus: [Menu] = []
 
+    
+    // singleton
+    static let shared = Network()
+    private init(){
+        todaysMenus = []
+        tomrrowsMenus = []
+        dayAfterTomorrowMenus = []
+    }
+    
     var BREAKFAST_A: [String] = []
     var BREAKFAST_B: [String] = []
     var LUNCH: [String] = []
@@ -185,3 +196,4 @@ class Network: ObservableObject {
         UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(INTERNATIONAL, forKey: "INTERNATIONAL")
     }
 }
+

@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import WatchKit
 
 @main
 struct _______App: App {
+    
+    @StateObject private var network = Network.shared
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .environmentObject(network)
             }
         }
     }

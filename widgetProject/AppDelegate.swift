@@ -28,7 +28,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("apsData : ", apsData)
         }
         completionHandler([[.banner, .badge, .sound]])
-        Network().getMenus(of: "today")
+        Network.shared.getMenus(of: "today")
         print("MESSAGE RECIEVED ON FOREGROUND")
     }
     
@@ -39,7 +39,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("Message ID from userNotificationCenter didRecieve : ", messageID)
         }
         completionHandler()
-        Network().getMenus(of: "today")
+        Network.shared.getMenus(of: "today")
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("앱이 APNS에 등록되었음")

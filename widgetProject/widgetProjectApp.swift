@@ -10,7 +10,7 @@ import Firebase
 
 @main
 struct widgetProjectApp: App {
-    var network = Network()
+    @StateObject var network = Network.shared
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
