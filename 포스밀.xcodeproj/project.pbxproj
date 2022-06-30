@@ -14,12 +14,16 @@
 		34ADE24D286A161B000D8D03 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE24C286A161B000D8D03 /* ComplicationController.swift */; };
 		34ADE24F286A161C000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADE24E286A161C000D8D03 /* Assets.xcassets */; };
 		34ADE252286A161C000D8D03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADE251286A161C000D8D03 /* Preview Assets.xcassets */; };
-		34ADE256286A161C000D8D03 /* posmealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34ADE23B286A1619000D8D03 /* posmealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34ADE256286A161C000D8D03 /* 포스밀.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34ADE23B286A1619000D8D03 /* 포스밀.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		34ADE25F286A1A38000D8D03 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
 		34ADE260286A1EE5000D8D03 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
 		34ADE263286A2134000D8D03 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 34ADE262286A2134000D8D03 /* FirebaseMessaging */; };
 		34ADE264286A21BC000D8D03 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63A3B572822A2D300FBCF96 /* SwiftUI.framework */; };
 		34ADE267286A229C000D8D03 /* WatchMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE266286A229C000D8D03 /* WatchMenuView.swift */; };
+		34ADE26A286CAF67000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
+		34ADE26B286CAFED000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
+		34ADE26D286CBA03000D8D03 /* ComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE26C286CBA03000D8D03 /* ComplicationView.swift */; };
+		34ADE26F286CC823000D8D03 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE26E286CC823000D8D03 /* ExtensionDelegate.swift */; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
 		C63A3B442822A26400FBCF96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B432822A26400FBCF96 /* ContentView.swift */; };
 		C63A3B462822A26400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
@@ -27,7 +31,6 @@
 		C63A3B562822A2D300FBCF96 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63A3B552822A2D300FBCF96 /* WidgetKit.framework */; };
 		C63A3B582822A2D300FBCF96 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63A3B572822A2D300FBCF96 /* SwiftUI.framework */; };
 		C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B5A2822A2D300FBCF96 /* myWidget.swift */; };
-		C63A3B5D2822A2D400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B5C2822A2D400FBCF96 /* Assets.xcassets */; };
 		C63A3B612822A2D400FBCF96 /* myWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C65FDDAF2823B0BB00BE164E /* OnBoardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDAE2823B0BB00BE164E /* OnBoardingTabView.swift */; };
 		C65FDDB12823B0D800BE164E /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB02823B0D800BE164E /* OnBoardingPageView.swift */; };
@@ -90,7 +93,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				34ADE256286A161C000D8D03 /* posmealWatch.app in Embed Watch Content */,
+				34ADE256286A161C000D8D03 /* 포스밀.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +112,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		34ADE23B286A1619000D8D03 /* posmealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = posmealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34ADE23B286A1619000D8D03 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADE23D286A161B000D8D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "posmealWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADE248286A161B000D8D03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 		34ADE251286A161C000D8D03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34ADE253286A161C000D8D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34ADE266286A229C000D8D03 /* WatchMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMenuView.swift; sourceTree = "<group>"; };
+		34ADE26C286CBA03000D8D03 /* ComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationView.swift; sourceTree = "<group>"; };
+		34ADE26E286CC823000D8D03 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
 		C63A3B432822A26400FBCF96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 				34ADE24E286A161C000D8D03 /* Assets.xcassets */,
 				34ADE253286A161C000D8D03 /* Info.plist */,
 				34ADE250286A161C000D8D03 /* Preview Content */,
+				34ADE26E286CC823000D8D03 /* ExtensionDelegate.swift */,
 			);
 			path = "posmealWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				34ADE266286A229C000D8D03 /* WatchMenuView.swift */,
+				34ADE26C286CBA03000D8D03 /* ComplicationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,7 +236,7 @@
 			children = (
 				C63A3B3E2822A26400FBCF96 /* 포스밀.app */,
 				C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */,
-				34ADE23B286A1619000D8D03 /* posmealWatch.app */,
+				34ADE23B286A1619000D8D03 /* 포스밀.app */,
 				34ADE243286A161B000D8D03 /* posmealWatch WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -307,7 +314,7 @@
 			);
 			name = posmealWatch;
 			productName = posmealWatch;
-			productReference = 34ADE23B286A1619000D8D03 /* posmealWatch.app */;
+			productReference = 34ADE23B286A1619000D8D03 /* 포스밀.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		34ADE242286A161B000D8D03 /* posmealWatch WatchKit Extension */ = {
@@ -435,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34ADE252286A161C000D8D03 /* Preview Assets.xcassets in Resources */,
+				34ADE26A286CAF67000D8D03 /* Assets.xcassets in Resources */,
 				34ADE24F286A161C000D8D03 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +461,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C63A3B5D2822A2D400FBCF96 /* Assets.xcassets in Resources */,
+				34ADE26B286CAFED000D8D03 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +474,12 @@
 			files = (
 				34ADE249286A161B000D8D03 /* ContentView.swift in Sources */,
 				34ADE267286A229C000D8D03 /* WatchMenuView.swift in Sources */,
+				34ADE26F286CC823000D8D03 /* ExtensionDelegate.swift in Sources */,
 				34ADE24B286A161B000D8D03 /* _______App.swift in Sources */,
 				34ADE260286A1EE5000D8D03 /* MenuModel.swift in Sources */,
 				34ADE25F286A1A38000D8D03 /* Network.swift in Sources */,
 				34ADE24D286A161B000D8D03 /* ComplicationController.swift in Sources */,
+				34ADE26D286CBA03000D8D03 /* ComplicationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +545,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "posmealWatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "posmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = posmealWatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -566,7 +576,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "posmealWatch WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "posmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = posmealWatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -597,12 +607,11 @@
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = posmealWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = posmealWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.led.posmeal;
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.led.posmeal.watchkit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "포스밀";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -623,12 +632,11 @@
 				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = posmealWatch_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = posmealWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.led.posmeal;
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.led.posmeal.watchkit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "포스밀";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -842,7 +850,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.led.posmeal.myWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -871,7 +879,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.led.posmeal.myWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

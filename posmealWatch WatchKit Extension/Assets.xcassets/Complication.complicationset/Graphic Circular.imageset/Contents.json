@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "포스밀_84.png",
       "idiom" : "watch",
       "scale" : "2x"
     },
     {
+      "filename" : "포스밀_94.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

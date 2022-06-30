@@ -11,6 +11,8 @@ import WatchKit
 @main
 struct _______App: App {
     
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) private var extensionDelegate
+
     @StateObject private var network = Network.shared
     
     var body: some Scene {
