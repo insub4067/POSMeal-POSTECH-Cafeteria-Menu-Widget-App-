@@ -12,15 +12,18 @@ import SwiftUI
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     private let network = Network.shared
+    private lazy var shortcutProvider = ShortcutComplicationProvider()
+    
     
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
             CLKComplicationDescriptor(identifier: "complication", displayName: "포스밀", supportedFamilies: [
-                .graphicCircular,
+                .circularSmall,
                 .graphicCorner,
-                .modularLarge
+                .modularLarge,
+                .graphicRectangular
             ])
             // Multiple complication support can be added here with more descriptors
         ]
@@ -55,7 +58,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             var menu: [String] = []
             var restau_name = ""
             
-            if 0 <= dateComponent.hour! && dateComponent.hour! < 9{
+            if 0 <= dateComponent.hour! && dateComponent.hour! < 9 {
                 menu = network.BREAKFAST_A
                 restau_name = "조식"
             }
@@ -63,9 +66,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 menu = network.LUNCH
                 restau_name = "중식"
             }
-            else if 14 <= dateComponent.hour! && dateComponent.hour! <= 23{
+            else if 14 <= dateComponent.hour! && dateComponent.hour! <= 23 {
                 menu = network.DINNER
                 restau_name = "석식"
+            }
+            
+            if menu.isEmpty {
+                handler(nil)
+                return
             }
             
             guard let template = makeTemplate(title: "\(dateComponent.month!)월 \(dateComponent.day!)일 \(restau_name)", body: "\(menu[0])\n\(menu[1]) 외 \(menu.count-2 == 0 ? "" : String(menu.count-2))", comlication: complication)
@@ -73,18 +81,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 handler(nil)
                 return
             }
-                  
+            
             let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
             handler(entry)
         
-        case .graphicCorner:
-            handler(nil)
             
-        case .graphicCircular:
-            let template = makeTemplate(title: "포스밀", body: "", comlication: complication)
-            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template!)
-            handler(entry)
+        case .graphicCorner:
+            let imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_20.png")!)
+            let template = CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: imageProvider)
+            
+            handler(CLKComplicationTimelineEntry(date:Date(),
+                                                 complicationTemplate: template))
+            
+        case .circularSmall:
+            let imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "포스밀_20.png")!)
+            let template = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider)
+
+            handler(CLKComplicationTimelineEntry(date: Date()
+                                                 , complicationTemplate: template))
             
         default:
             handler(nil)
@@ -101,10 +116,31 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        let text = "오늘 식단의 일부가 여기에 표시됩니다"
-        let template = makeTemplate(title: "포스밀", body: text, comlication: complication)
         
-        handler(template)
+        switch complication.family {
+        case .modularLarge:
+            let text = "오늘 식단이 여기에 표시됩니다"
+            let template = makeTemplate(title: "포스밀", body: text, comlication: complication)
+        
+            handler(template)
+            
+        case .graphicRectangular:
+            let headerTextProvider = CLKSimpleTextProvider(text: "포스밀")
+            let bodyTextProvider = CLKSimpleTextProvider(text: "오늘 식단이 여기에 표시됩니다")
+            handler(CLKComplicationTemplateGraphicRectangularStandardBody(headerTextProvider: headerTextProvider, body1TextProvider: bodyTextProvider))
+            
+        case .graphicCorner:
+            let imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_20.png")!)
+            handler(CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: imageProvider))
+            
+        case .circularSmall:
+            let  imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "포스밀_20.png")!)
+            handler(CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider))
+            
+        default:
+            handler(nil)
+            
+        }
     }
 }
 
@@ -115,15 +151,20 @@ extension ComplicationController {
         comlication: CLKComplication
     ) -> CLKComplicationTemplate? {
         switch comlication.family {
+            
         case .graphicRectangular:
-            return CLKComplicationTemplateGraphicRectangularLargeView(headerTextProvider: CLKTextProvider(format: title, []), content: ComplicationModularLargeView(text: body))
+            return CLKComplicationTemplateGraphicRectangularLargeView(headerTextProvider: CLKTextProvider(format: title, []),
+                                                                      content: ComplicationModularLargeView(text: body))
             
-        case .modularLarge:
-            return CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: CLKTextProvider(format: title, []), body1TextProvider: CLKTextProvider(format: body, []))
+        case .circularSmall:
+            return CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(systemName: "heart.text.square")!))
             
-        case .modularSmall:
-            return CLKComplicationTemplateModularSmallSimpleText(textProvider: CLKTextProvider(format: title, []))
+        case .graphicCorner:
+//            return CLKComplicationTemplateModularSmallSimpleText(textProvider: CLKTextProvider(format: title, []))
+            return CLKComplicationTemplateGraphicCornerTextView(textProvider: CLKTextProvider(format: title, []), label: Text("Text"))
             
+            
+            //shortcutProvider.getShortcutComplication())
         default:
             return nil
         }

@@ -24,6 +24,7 @@
 		34ADE26B286CAFED000D8D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
 		34ADE26D286CBA03000D8D03 /* ComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE26C286CBA03000D8D03 /* ComplicationView.swift */; };
 		34ADE26F286CC823000D8D03 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE26E286CC823000D8D03 /* ExtensionDelegate.swift */; };
+		34ADE272286DB317000D8D03 /* ComplicationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADE271286DB317000D8D03 /* ComplicationProvider.swift */; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
 		C63A3B442822A26400FBCF96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B432822A26400FBCF96 /* ContentView.swift */; };
 		C63A3B462822A26400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		34ADE266286A229C000D8D03 /* WatchMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMenuView.swift; sourceTree = "<group>"; };
 		34ADE26C286CBA03000D8D03 /* ComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationView.swift; sourceTree = "<group>"; };
 		34ADE26E286CC823000D8D03 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		34ADE271286DB317000D8D03 /* ComplicationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationProvider.swift; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
 		C63A3B432822A26400FBCF96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		34ADE247286A161B000D8D03 /* posmealWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				34ADE270286DB309000D8D03 /* Providers */,
 				34ADE265286A2289000D8D03 /* Views */,
 				34ADE248286A161B000D8D03 /* ContentView.swift */,
 				34ADE24A286A161B000D8D03 /* _______App.swift */,
@@ -216,6 +219,14 @@
 				34ADE26C286CBA03000D8D03 /* ComplicationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		34ADE270286DB309000D8D03 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				34ADE271286DB317000D8D03 /* ComplicationProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		C63A3B352822A26400FBCF96 = {
@@ -472,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34ADE272286DB317000D8D03 /* ComplicationProvider.swift in Sources */,
 				34ADE249286A161B000D8D03 /* ContentView.swift in Sources */,
 				34ADE267286A229C000D8D03 /* WatchMenuView.swift in Sources */,
 				34ADE26F286CC823000D8D03 /* ExtensionDelegate.swift in Sources */,
