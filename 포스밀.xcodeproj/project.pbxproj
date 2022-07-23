@@ -128,17 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				C6CC134C2822A97000D3EA1A /* widgetProject.entitlements */,
-				C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */,
-				C63A3B432822A26400FBCF96 /* ContentView.swift */,
-				C6947820282A93980087F11C /* AppDelegate.swift */,
-				C6CB935328258252005D143E /* MenuView.swift */,
-				C6CC13462822A72000D3EA1A /* Network.swift */,
-				C6CC13482822A75400D3EA1A /* MenuModel.swift */,
+				C64C9B52288BC48600DA1238 /* Resources */,
+				C64C9B51288BC47000DA1238 /* Views */,
+				C64C9B50288BC45F00DA1238 /* Managers */,
+				C64C9B53288BC4B000DA1238 /* Models */,
 				C64C9B4B288B952600DA1238 /* Extensions */,
 				C679DCD1282A1AD400D87E97 /* GoogleService-Info.plist */,
-				C65FDDAB2823AFFA00BE164E /* OnBoardingViews */,
-				C63A3B452822A26400FBCF96 /* Assets.xcassets */,
-				C63A3B472822A26400FBCF96 /* Preview Content */,
 			);
 			path = widgetProject;
 			sourceTree = "<group>";
@@ -176,6 +171,43 @@
 				C64C9B4C288B953200DA1238 /* Color+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C64C9B50288BC45F00DA1238 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC13462822A72000D3EA1A /* Network.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C64C9B51288BC47000DA1238 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C65FDDAB2823AFFA00BE164E /* OnBoardingViews */,
+				C63A3B432822A26400FBCF96 /* ContentView.swift */,
+				C6CB935328258252005D143E /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C64C9B52288BC48600DA1238 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C63A3B452822A26400FBCF96 /* Assets.xcassets */,
+				C63A3B472822A26400FBCF96 /* Preview Content */,
+				C6947820282A93980087F11C /* AppDelegate.swift */,
+				C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C64C9B53288BC4B000DA1238 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC13482822A75400D3EA1A /* MenuModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C65FDDAB2823AFFA00BE164E /* OnBoardingViews */ = {
@@ -457,7 +489,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetProject/widgetProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 76AJ433CP5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -491,7 +523,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetProject/widgetProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 76AJ433CP5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
