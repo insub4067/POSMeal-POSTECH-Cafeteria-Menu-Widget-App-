@@ -102,7 +102,7 @@ struct widgetCardView: View{
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(Color.backgroundColor)
+        .background(Color.cardBackground)
         .onAppear{
             self.FOODS = []
             self.FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: self.selectedMeal ?? "LUNCH") as [String]?
@@ -219,7 +219,7 @@ struct widgetMediumCardView: View{
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
         }
-        .background(Color.backgroundColor)
+        .background(Color.cardBackground)
 
     }
 }
@@ -332,7 +332,7 @@ struct widgetLargeCardView: View{
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
         }
-        .background(Color.backgroundColor)
+        .background(Color.cardBackground)
 
     }
 }
