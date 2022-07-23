@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    //Define
-    @Environment(\.colorScheme) var colorScheme
+
+    // Define
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var network: Network
     @AppStorage("isFirstLaunching") var isFirstLaunching: Bool = true
     @State private var showSheet = false
     @State private var selectedMeal = "ONTIME"
 
-
+    // init
     init(){
         UIPageControl.appearance().currentPageIndicatorTintColor = Color.currentPageIndicatorTintColor
         UIPageControl.appearance().pageIndicatorTintColor = Color.pageIndicatorTintColor
     }
 
+    // body
     var body: some View {
         
         NavigationView {

@@ -9,6 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    @EnvironmentObject var network: Network
     let date = Date()
 
     //PlACEHOLDER
@@ -17,6 +18,9 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+
+        network.getMenus(of: "today")
+
         let entry = SimpleEntry(date: date)
         completion(entry)
     }
@@ -39,8 +43,8 @@ struct SimpleEntry: TimelineEntry {
 
 //widgetCardView
 struct widgetCardView: View{
+
     //Define
-    @Environment(\.colorScheme) var colorScheme
     @State var FOODS: [String]? = []
     let CURRENTDATE: [String:String]?
     let scheduleDict: [String:String]
@@ -106,6 +110,7 @@ struct widgetCardView: View{
     }
 }
 
+// medium
 struct widgetMediumCardView: View{
     @Environment(\.colorScheme) var colorScheme
     @State var LUNCH_FOODS: [String]? = []
@@ -219,6 +224,7 @@ struct widgetMediumCardView: View{
     }
 }
 
+// large
 struct widgetLargeCardView: View{
     @Environment(\.colorScheme) var colorScheme
     @State var LUNCH_FOODS: [String]? = []

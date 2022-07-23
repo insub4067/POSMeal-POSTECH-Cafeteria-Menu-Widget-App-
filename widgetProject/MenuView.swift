@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MenuView: View {
-    @Environment(\.colorScheme) var colorScheme
+
+    // environment
     @EnvironmentObject var network: Network
-    
+
+    // param
     let date: String
     let menuIndex: Int
     
