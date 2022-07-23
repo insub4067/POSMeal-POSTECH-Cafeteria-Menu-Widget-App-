@@ -54,51 +54,7 @@ struct widgetCardView: View{
     var body: some View {
 
         VStack(alignment: .leading){
-            //Title
-            HStack{
-                //Title
-                Group{
-                    if selectedMeal != nil {
-                        Text("\(mealNameDict[selectedMeal!]!)")
-                            .bold()
-                    }
-                    else if selectedMeal == nil {
-                        Text("에러")
-                            .bold()
-                    }
-                }
-                Spacer()
-                //Time
-                Text(scheduleDict[selectedMeal ?? "LUNCH"]!)
-                    .font(.system(size:12))
-                    .foregroundColor(Color.timeForegroundColor)
-                    .padding(.vertical, 3)
-                    .padding(.horizontal, 10)
-                    .background(Color.timeBackgroundColor)
-                    .cornerRadius(10)
-            }
-            //Contents
-            VStack(alignment: .leading, spacing: 2){
-                if FOODS != nil{
-                    ForEach(FOODS!.indices, id: \.self){
-                        foodIndex in
-                        if foodIndex < 4 {
-                            Text(FOODS![foodIndex])
-                                .font(.system(size: 14))
-                                .foregroundColor(Color.foodForeground)
-                        }
-                        else if foodIndex == 4 {
-                            Text(FOODS![foodIndex] + (FOODS!.count > 5 ? " 외 \(FOODS!.count - 5)개" : ""))
-                                .font(.system(size: 14))
-                                .foregroundColor(Color.foodForeground)
-                        }
-                    }
-                }
-                else if FOODS == nil {
-                    Text("위젯 제거 후 다시 추가해주세요.")
-                }
-                Spacer()
-            }
+            menuViewBuilder()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
@@ -106,6 +62,54 @@ struct widgetCardView: View{
         .onAppear{
             self.FOODS = []
             self.FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: self.selectedMeal ?? "LUNCH") as [String]?
+        }
+    }
+
+    @ViewBuilder func menuViewBuilder() -> some View {
+        //Title
+        HStack{
+            //Title
+            Group{
+                if selectedMeal != nil {
+                    Text("\(mealNameDict[selectedMeal!]!)")
+                        .bold()
+                }
+                else if selectedMeal == nil {
+                    Text("에러")
+                        .bold()
+                }
+            }
+            Spacer()
+            //Time
+            Text(scheduleDict[selectedMeal ?? "LUNCH"]!)
+                .font(.system(size:12))
+                .foregroundColor(Color.timeForegroundColor)
+                .padding(.vertical, 3)
+                .padding(.horizontal, 10)
+                .background(Color.timeBackgroundColor)
+                .cornerRadius(10)
+        }
+        //Contents
+        VStack(alignment: .leading, spacing: 2){
+            if FOODS != nil{
+                ForEach(FOODS!.indices, id: \.self){
+                    foodIndex in
+                    if foodIndex < 4 {
+                        Text(FOODS![foodIndex])
+                            .font(.system(size: 14))
+                            .foregroundColor(Color.foodForeground)
+                    }
+                    else if foodIndex == 4 {
+                        Text(FOODS![foodIndex] + (FOODS!.count > 5 ? " 외 \(FOODS!.count - 5)개" : ""))
+                            .font(.system(size: 14))
+                            .foregroundColor(Color.foodForeground)
+                    }
+                }
+            }
+            else if FOODS == nil {
+                Text("위젯 제거 후 다시 추가해주세요.")
+            }
+            Spacer()
         }
     }
 }
@@ -122,105 +126,113 @@ struct widgetMediumCardView: View{
     var body: some View {
 
         HStack{
-            VStack(alignment: .leading){
-                //Title
-                HStack{
-                    //Title
-                    Text("\(mealNameDict["LUNCH"]!)")
-                        .bold()
-                    Spacer()
-                    //Time
-                    Text(scheduleDict["LUNCH"]!)
-                        .font(.system(size:12))
-                        .foregroundColor(Color.timeForegroundColor)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 10)
-                        .background(Color.timeBackgroundColor)
-                        .cornerRadius(10)
-                }
-                
-                //Contents
-                VStack(alignment: .leading, spacing: 2){
-                    if LUNCH_FOODS != nil{
-                        ForEach(LUNCH_FOODS!.indices, id: \.self){
-                            foodIndex in
-                            if foodIndex < 4 {
-                                Text(LUNCH_FOODS![foodIndex])
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                            else if foodIndex == 4 {
-                                Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                        }
-                    }
-                    else if LUNCH_FOODS == nil {
-                        Text("위젯 제거 후 다시 추가해주세요.")
-                    }
-                    Spacer()
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .onAppear{
-                self.LUNCH_FOODS = []
-                self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
-            }
-            
+            lunchMenuViewBuilder()
+
             Divider()
                 .padding(.vertical)
-            
-            VStack(alignment: .leading){
-                //Title
-                HStack{
-                    //Title
-                    Text("\(mealNameDict["DINNER"]!)")
-                        .bold()
-                    Spacer()
-                    //Time
-                    Text(scheduleDict["DINNER"]!)
-                        .font(.system(size:12))
-                        .foregroundColor(Color.timeForegroundColor)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 10)
-                        .background(Color.timeBackgroundColor)
-                        .cornerRadius(10)
-                }
 
-                //Contents
-                VStack(alignment: .leading, spacing: 2){
-                    if DINNER_FOODS != nil{
-                        ForEach(DINNER_FOODS!.indices, id: \.self){
-                            foodIndex in
-                            if foodIndex < 4 {
-                                Text(DINNER_FOODS![foodIndex])
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                            else if foodIndex == 4 {
-                                Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                        }
-                    }
-                    else if DINNER_FOODS == nil {
-                        Text("위젯 제거 후 다시 추가해주세요.")
-                    }
-                    Spacer()
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .onAppear{
-                self.DINNER_FOODS = []
-                self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
-            }
+            dinnerMenuViewBuilder()
+        }
+        .onAppear{
+            self.LUNCH_FOODS = []
+            self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
+
+            self.DINNER_FOODS = []
+            self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
         }
         .background(Color.cardBackground)
 
+    }
+
+    @ViewBuilder func lunchMenuViewBuilder() -> some View {
+
+        VStack(alignment: .leading){
+            //Title
+            HStack{
+                //Title
+                Text("\(mealNameDict["LUNCH"]!)")
+                    .bold()
+                Spacer()
+                //Time
+                Text(scheduleDict["LUNCH"]!)
+                    .font(.system(size:12))
+                    .foregroundColor(Color.timeForegroundColor)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 10)
+                    .background(Color.timeBackgroundColor)
+                    .cornerRadius(10)
+            }
+
+            //Contents
+            VStack(alignment: .leading, spacing: 2){
+                if LUNCH_FOODS != nil{
+                    ForEach(LUNCH_FOODS!.indices, id: \.self){
+                        foodIndex in
+                        if foodIndex < 4 {
+                            Text(LUNCH_FOODS![foodIndex])
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                        else if foodIndex == 4 {
+                            Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                    }
+                }
+                else if LUNCH_FOODS == nil {
+                    Text("위젯 제거 후 다시 추가해주세요.")
+                }
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+    }
+
+    @ViewBuilder func dinnerMenuViewBuilder() -> some View {
+        VStack(alignment: .leading){
+            //Title
+            HStack{
+                //Title
+                Text("\(mealNameDict["DINNER"]!)")
+                    .bold()
+                Spacer()
+                //Time
+                Text(scheduleDict["DINNER"]!)
+                    .font(.system(size:12))
+                    .foregroundColor(Color.timeForegroundColor)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 10)
+                    .background(Color.timeBackgroundColor)
+                    .cornerRadius(10)
+            }
+
+            //Contents
+            VStack(alignment: .leading, spacing: 2){
+                if DINNER_FOODS != nil{
+                    ForEach(DINNER_FOODS!.indices, id: \.self){
+                        foodIndex in
+                        if foodIndex < 4 {
+                            Text(DINNER_FOODS![foodIndex])
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                        else if foodIndex == 4 {
+                            Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                    }
+                }
+                else if DINNER_FOODS == nil {
+                    Text("위젯 제거 후 다시 추가해주세요.")
+                }
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
     }
 }
 
@@ -236,103 +248,109 @@ struct widgetLargeCardView: View{
     var body: some View{
 
         VStack{
-            VStack(alignment: .leading){
-                //Title
-                HStack{
-                    //Title
-                    Text("\(mealNameDict["LUNCH"]!)")
-                        .bold()
-                    Spacer()
-                    //Time
-                    Text(scheduleDict["LUNCH"]!)
-                        .font(.system(size:12))
-                        .foregroundColor(Color.timeForegroundColor)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 10)
-                        .background(Color.timeBackgroundColor)
-                        .cornerRadius(10)
-                }
-                
-                //Contents
-                VStack(alignment: .leading, spacing: 2){
-                    if LUNCH_FOODS != nil{
-                        ForEach(LUNCH_FOODS!.indices, id: \.self){
-                            foodIndex in
-                            if foodIndex < 4 {
-                                Text(LUNCH_FOODS![foodIndex])
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                            else if foodIndex == 4 {
-                                Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                        }
-                    }
-                    else if LUNCH_FOODS == nil {
-                        Text("위젯 제거 후 다시 추가해주세요.")
-                    }
-                    Spacer()
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .onAppear{
-                self.LUNCH_FOODS = []
-                self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
-            }
-            
+            lunchMenuViewBuilder()
             Divider()
                 .padding(.horizontal)
-                
-            VStack(alignment: .leading){
-                //Title
-                HStack{
-                    //Title
-                    Text("\(mealNameDict["DINNER"]!)")
-                        .bold()
-                    Spacer()
-                    //Time
-                    Text(scheduleDict["DINNER"]!)
-                        .font(.system(size:12))
-                        .foregroundColor(Color.timeForegroundColor)
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 10)
-                        .background(Color.timeBackgroundColor)
-                        .cornerRadius(10)
-                }
-                //Contents
-                VStack(alignment: .leading, spacing: 2){
-                    if DINNER_FOODS != nil{
-                        ForEach(DINNER_FOODS!.indices, id: \.self){
-                            foodIndex in
-                            if foodIndex < 4 {
-                                Text(DINNER_FOODS![foodIndex])
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                            else if foodIndex == 4 {
-                                Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.foodForeground)
-                            }
-                        }
-                    }
-                    else if DINNER_FOODS == nil {
-                        Text("위젯 제거 후 다시 추가해주세요.")
-                    }
-                    Spacer()
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .onAppear{
-                self.DINNER_FOODS = []
-                self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
-            }
+            dinnerMenuViewBuilder()
         }
         .background(Color.cardBackground)
+        .onAppear{
+            self.LUNCH_FOODS = []
+            self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
+
+            self.DINNER_FOODS = []
+            self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
+        }
+    }
+
+    @ViewBuilder func lunchMenuViewBuilder() -> some View {
+
+        VStack(alignment: .leading){
+            //Title
+            HStack{
+                //Title
+                Text("\(mealNameDict["LUNCH"]!)")
+                    .bold()
+                Spacer()
+                //Time
+                Text(scheduleDict["LUNCH"]!)
+                    .font(.system(size:12))
+                    .foregroundColor(Color.timeForegroundColor)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 10)
+                    .background(Color.timeBackgroundColor)
+                    .cornerRadius(10)
+            }
+
+            //Contents
+            VStack(alignment: .leading, spacing: 2){
+                if LUNCH_FOODS != nil{
+                    ForEach(LUNCH_FOODS!.indices, id: \.self){
+                        foodIndex in
+                        if foodIndex < 4 {
+                            Text(LUNCH_FOODS![foodIndex])
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                        else if foodIndex == 4 {
+                            Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                    }
+                }
+                else if LUNCH_FOODS == nil {
+                    Text("위젯 제거 후 다시 추가해주세요.")
+                }
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+    }
+
+    @ViewBuilder func dinnerMenuViewBuilder() -> some View {
+        VStack(alignment: .leading){
+            //Title
+            HStack{
+                //Title
+                Text("\(mealNameDict["DINNER"]!)")
+                    .bold()
+                Spacer()
+                //Time
+                Text(scheduleDict["DINNER"]!)
+                    .font(.system(size:12))
+                    .foregroundColor(Color.timeForegroundColor)
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 10)
+                    .background(Color.timeBackgroundColor)
+                    .cornerRadius(10)
+            }
+            //Contents
+            VStack(alignment: .leading, spacing: 2){
+                if DINNER_FOODS != nil{
+                    ForEach(DINNER_FOODS!.indices, id: \.self){
+                        foodIndex in
+                        if foodIndex < 4 {
+                            Text(DINNER_FOODS![foodIndex])
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                        else if foodIndex == 4 {
+                            Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.foodForeground)
+                        }
+                    }
+                }
+                else if DINNER_FOODS == nil {
+                    Text("위젯 제거 후 다시 추가해주세요.")
+                }
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
 
     }
 }
