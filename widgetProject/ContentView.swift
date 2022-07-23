@@ -16,11 +16,13 @@ struct ContentView: View {
     @State private var showSheet = false
     @State private var selectedMeal = "ONTIME"
 
+
+    init(){
+        UIPageControl.appearance().currentPageIndicatorTintColor = Color.currentPageIndicatorTintColor
+        UIPageControl.appearance().pageIndicatorTintColor = Color.pageIndicatorTintColor
+    }
+
     var body: some View {
-        
-        let lightModeBackgroundColor = Color(red: 242/255, green: 242/255, blue: 246/255)        
-        let lightGray = UIColor(Color(red: 200/255, green: 200/255, blue: 200/255))
-        let darkGray = UIColor(Color(red: 120/255, green: 120/255, blue: 120/255))
         
         NavigationView {
             TabView{
@@ -29,15 +31,12 @@ struct ContentView: View {
                 MenuView(date: "dayAfterTomorrow", menuIndex: 2)
             }
             .onAppear{
-                // TabView Page Indicator
-                UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ?  lightGray : darkGray
-                UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
                 // Lock on Portrait Mode
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
                 AppDelegate.orientationLock = .portrait
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-            .background(colorScheme == .dark ? Color.black : lightModeBackgroundColor)
+            .background(Color.backgroundColor)
             .navigationBarHidden(true)
             .toolbar{
                 ToolbarItemGroup(placement: ToolbarItemPlacement.bottomBar){

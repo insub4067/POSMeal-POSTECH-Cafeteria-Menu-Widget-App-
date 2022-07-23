@@ -16,6 +16,9 @@
 		C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B5A2822A2D300FBCF96 /* myWidget.swift */; };
 		C63A3B5D2822A2D400FBCF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B5C2822A2D400FBCF96 /* Assets.xcassets */; };
 		C63A3B612822A2D400FBCF96 /* myWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C63A3B532822A2D300FBCF96 /* myWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C64C9B49288B8D9600DA1238 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
+		C64C9B4A288B8D9900DA1238 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
+		C64C9B4D288B953200DA1238 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C9B4C288B953200DA1238 /* Color+.swift */; };
 		C65FDDAF2823B0BB00BE164E /* OnBoardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDAE2823B0BB00BE164E /* OnBoardingTabView.swift */; };
 		C65FDDB12823B0D800BE164E /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB02823B0D800BE164E /* OnBoardingPageView.swift */; };
 		C65FDDB32823B0E600BE164E /* OnBoardingLastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB22823B0E600BE164E /* OnBoardingLastPageView.swift */; };
@@ -64,6 +67,7 @@
 		C63A3B5A2822A2D300FBCF96 /* myWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWidget.swift; sourceTree = "<group>"; };
 		C63A3B5C2822A2D400FBCF96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C63A3B5E2822A2D400FBCF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C64C9B4C288B953200DA1238 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		C65FDDAE2823B0BB00BE164E /* OnBoardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTabView.swift; sourceTree = "<group>"; };
 		C65FDDB02823B0D800BE164E /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
 		C65FDDB22823B0E600BE164E /* OnBoardingLastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingLastPageView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				C6CB935328258252005D143E /* MenuView.swift */,
 				C6CC13462822A72000D3EA1A /* Network.swift */,
 				C6CC13482822A75400D3EA1A /* MenuModel.swift */,
+				C64C9B4B288B952600DA1238 /* Extensions */,
 				C679DCD1282A1AD400D87E97 /* GoogleService-Info.plist */,
 				C65FDDAB2823AFFA00BE164E /* OnBoardingViews */,
 				C63A3B452822A26400FBCF96 /* Assets.xcassets */,
@@ -161,6 +166,14 @@
 				C63A3B5E2822A2D400FBCF96 /* Info.plist */,
 			);
 			path = myWidget;
+			sourceTree = "<group>";
+		};
+		C64C9B4B288B952600DA1238 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C64C9B4C288B953200DA1238 /* Color+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C65FDDAB2823AFFA00BE164E /* OnBoardingViews */ = {
@@ -287,6 +300,7 @@
 				C65FDDAF2823B0BB00BE164E /* OnBoardingTabView.swift in Sources */,
 				C6947821282A93980087F11C /* AppDelegate.swift in Sources */,
 				C63A3B442822A26400FBCF96 /* ContentView.swift in Sources */,
+				C64C9B4D288B953200DA1238 /* Color+.swift in Sources */,
 				C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */,
 				C6CC13472822A72000D3EA1A /* Network.swift in Sources */,
 				C65FDDB32823B0E600BE164E /* OnBoardingLastPageView.swift in Sources */,
@@ -298,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64C9B49288B8D9600DA1238 /* MenuModel.swift in Sources */,
 				C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */,
+				C64C9B4A288B8D9900DA1238 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

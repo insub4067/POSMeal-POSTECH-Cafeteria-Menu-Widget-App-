@@ -124,10 +124,10 @@ struct widgetMediumCardView: View{
         
         let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
         let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
+        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
         let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
         let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
-        
+
         HStack{
             VStack(alignment: .leading){
                 //Title
