@@ -22,9 +22,9 @@ class Network: ObservableObject {
     
     //GET DATE of TODAY || TOMORROW
     @discardableResult
-    func getDate(of: String) -> [String:String]{
+    func getDate(of date: String) -> [String:String]{
+        
         //Define
-        let date = of
         let calendar = Calendar.current
         let today = Date()
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
@@ -72,9 +72,9 @@ class Network: ObservableObject {
     }
     
     //GET MENUS OF A DAY
-    func getMenus(of: String) -> Void {
+    func getMenus(of date: String) -> Void {
+
         //Define
-        let date = of
         let returnedDate = getDate(of: date)
         let year = returnedDate["year"]!
         let month = returnedDate["month"]!
@@ -100,17 +100,14 @@ class Network: ObservableObject {
                     do {
                         //Decode
                         let decodedMenus = try JSONDecoder().decode([Menu].self, from: data)
-                        
-                        //if today
-                        if of == "today"{
+
+                        switch date {
+                        case "today":
                             self.todaysMenus = decodedMenus
                             self.saveAtUserDefaults()
-                        }
-                        //if tomorrow
-                        else if of == "tomorrow"{
+                        case "tomorrow":
                             self.tomrrowsMenus = decodedMenus
-                        }
-                        else if of == "dayAfterTomorrow"{
+                        default:
                             self.dayAfterTomorrowMenus = decodedMenus
                         }
                         

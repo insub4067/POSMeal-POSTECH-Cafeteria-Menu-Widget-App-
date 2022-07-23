@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MenuView: View {
-    @Environment(\.colorScheme) var colorScheme
+
+    // environment
     @EnvironmentObject var network: Network
-    
+
+    // param
     let date: String
     let menuIndex: Int
     
@@ -39,12 +41,6 @@ struct MenuView: View {
         let day = date["day"]!
         let weekday = date["weekday"]!
         
-        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
-        let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
-        let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
-        
         let menusList = [network.todaysMenus, network.tomrrowsMenus, network.dayAfterTomorrowMenus]
                 
         VStack {
@@ -66,10 +62,10 @@ struct MenuView: View {
                                 //Time
                                 Text(scheduleDict[menu.type]!)
                                     .font(.system(size: 12))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                                    .foregroundColor(Color.timeForegroundColor)
                                     .padding(.vertical, 3)
                                     .padding(.horizontal, 5)
-                                    .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                                    .background(Color.timeBackgroundColor)
                                     .cornerRadius(20)
                             }
                             //Food
@@ -78,13 +74,13 @@ struct MenuView: View {
                                     let check = food.isMain == true ? "*" : ""
                                     Text(food.name_kor + check)
                                         .font(.system(size: 15))
-                                        .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                        .foregroundColor(Color.foodForeground)
                                 }
                             }
                         }
                         .frame(width: 300, alignment: .leading)
                         .padding()
-                        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+                        .background(Color.cardBackground)
                         .cornerRadius(10)
                     }
                     .frame(maxWidth: .infinity)
