@@ -48,13 +48,7 @@ struct widgetCardView: View{
     let mealNameDict: [String:String]
     
     var body: some View {
-        
-        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
-        let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
-        let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
-        
+
         VStack(alignment: .leading){
             //Title
             HStack{
@@ -73,10 +67,10 @@ struct widgetCardView: View{
                 //Time
                 Text(scheduleDict[selectedMeal ?? "LUNCH"]!)
                     .font(.system(size:12))
-                    .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                    .foregroundColor(Color.timeForegroundColor)
                     .padding(.vertical, 3)
                     .padding(.horizontal, 10)
-                    .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                    .background(Color.timeBackgroundColor)
                     .cornerRadius(10)
             }
             //Contents
@@ -87,12 +81,12 @@ struct widgetCardView: View{
                         if foodIndex < 4 {
                             Text(FOODS![foodIndex])
                                 .font(.system(size: 14))
-                                .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                .foregroundColor(Color.foodForeground)
                         }
                         else if foodIndex == 4 {
                             Text(FOODS![foodIndex] + (FOODS!.count > 5 ? " 외 \(FOODS!.count - 5)개" : ""))
                                 .font(.system(size: 14))
-                                .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                .foregroundColor(Color.foodForeground)
                         }
                     }
                 }
@@ -104,7 +98,7 @@ struct widgetCardView: View{
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+        .background(Color.backgroundColor)
         .onAppear{
             self.FOODS = []
             self.FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: self.selectedMeal ?? "LUNCH") as [String]?
@@ -121,12 +115,6 @@ struct widgetMediumCardView: View{
     let mealNameDict: [String:String]
     
     var body: some View {
-        
-        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
-        let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
-        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
-        let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
 
         HStack{
             VStack(alignment: .leading){
@@ -139,10 +127,10 @@ struct widgetMediumCardView: View{
                     //Time
                     Text(scheduleDict["LUNCH"]!)
                         .font(.system(size:12))
-                        .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                        .foregroundColor(Color.timeForegroundColor)
                         .padding(.vertical, 3)
                         .padding(.horizontal, 10)
-                        .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                        .background(Color.timeBackgroundColor)
                         .cornerRadius(10)
                 }
                 
@@ -154,12 +142,12 @@ struct widgetMediumCardView: View{
                             if foodIndex < 4 {
                                 Text(LUNCH_FOODS![foodIndex])
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                             else if foodIndex == 4 {
                                 Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                         }
                     }
@@ -189,10 +177,10 @@ struct widgetMediumCardView: View{
                     //Time
                     Text(scheduleDict["DINNER"]!)
                         .font(.system(size:12))
-                        .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                        .foregroundColor(Color.timeForegroundColor)
                         .padding(.vertical, 3)
                         .padding(.horizontal, 10)
-                        .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                        .background(Color.timeBackgroundColor)
                         .cornerRadius(10)
                 }
 
@@ -204,12 +192,12 @@ struct widgetMediumCardView: View{
                             if foodIndex < 4 {
                                 Text(DINNER_FOODS![foodIndex])
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                             else if foodIndex == 4 {
                                 Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                         }
                     }
@@ -226,7 +214,7 @@ struct widgetMediumCardView: View{
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
         }
-        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+        .background(Color.backgroundColor)
 
     }
 }
@@ -240,12 +228,7 @@ struct widgetLargeCardView: View{
     let mealNameDict: [String:String]
     
     var body: some View{
-        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
-        let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
-        let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
-        
+
         VStack{
             VStack(alignment: .leading){
                 //Title
@@ -257,10 +240,10 @@ struct widgetLargeCardView: View{
                     //Time
                     Text(scheduleDict["LUNCH"]!)
                         .font(.system(size:12))
-                        .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                        .foregroundColor(Color.timeForegroundColor)
                         .padding(.vertical, 3)
                         .padding(.horizontal, 10)
-                        .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                        .background(Color.timeBackgroundColor)
                         .cornerRadius(10)
                 }
                 
@@ -272,12 +255,12 @@ struct widgetLargeCardView: View{
                             if foodIndex < 4 {
                                 Text(LUNCH_FOODS![foodIndex])
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                             else if foodIndex == 4 {
                                 Text(LUNCH_FOODS![foodIndex] + (LUNCH_FOODS!.count > 5 ? " 외 \(LUNCH_FOODS!.count - 5)개" : ""))
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                         }
                     }
@@ -307,10 +290,10 @@ struct widgetLargeCardView: View{
                     //Time
                     Text(scheduleDict["DINNER"]!)
                         .font(.system(size:12))
-                        .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                        .foregroundColor(Color.timeForegroundColor)
                         .padding(.vertical, 3)
                         .padding(.horizontal, 10)
-                        .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                        .background(Color.timeBackgroundColor)
                         .cornerRadius(10)
                 }
                 //Contents
@@ -321,12 +304,12 @@ struct widgetLargeCardView: View{
                             if foodIndex < 4 {
                                 Text(DINNER_FOODS![foodIndex])
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                             else if foodIndex == 4 {
                                 Text(DINNER_FOODS![foodIndex] + (DINNER_FOODS!.count > 5 ? " 외 \(DINNER_FOODS!.count - 5)개" : ""))
                                     .font(.system(size: 14))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                    .foregroundColor(Color.foodForeground)
                             }
                         }
                     }
@@ -343,7 +326,7 @@ struct widgetLargeCardView: View{
                 self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
             }
         }
-        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+        .background(Color.backgroundColor)
 
     }
 }

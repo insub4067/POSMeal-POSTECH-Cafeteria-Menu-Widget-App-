@@ -19,6 +19,8 @@
 		C64C9B49288B8D9600DA1238 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
 		C64C9B4A288B8D9900DA1238 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
 		C64C9B4D288B953200DA1238 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C9B4C288B953200DA1238 /* Color+.swift */; };
+		C64C9B4E288B9AE500DA1238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A3B452822A26400FBCF96 /* Assets.xcassets */; };
+		C64C9B4F288BA72C00DA1238 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C9B4C288B953200DA1238 /* Color+.swift */; };
 		C65FDDAF2823B0BB00BE164E /* OnBoardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDAE2823B0BB00BE164E /* OnBoardingTabView.swift */; };
 		C65FDDB12823B0D800BE164E /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB02823B0D800BE164E /* OnBoardingPageView.swift */; };
 		C65FDDB32823B0E600BE164E /* OnBoardingLastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FDDB22823B0E600BE164E /* OnBoardingLastPageView.swift */; };
@@ -284,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64C9B4E288B9AE500DA1238 /* Assets.xcassets in Resources */,
 				C63A3B5D2822A2D400FBCF96 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64C9B49288B8D9600DA1238 /* MenuModel.swift in Sources */,
+				C64C9B4F288BA72C00DA1238 /* Color+.swift in Sources */,
 				C63A3B5B2822A2D300FBCF96 /* myWidget.swift in Sources */,
 				C64C9B4A288B8D9900DA1238 /* Network.swift in Sources */,
 			);
