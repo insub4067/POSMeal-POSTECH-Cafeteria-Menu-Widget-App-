@@ -100,17 +100,14 @@ class Network: ObservableObject {
                     do {
                         //Decode
                         let decodedMenus = try JSONDecoder().decode([Menu].self, from: data)
-                        
-                        //if today
-                        if date == "today"{
+
+                        switch date {
+                        case "today":
                             self.todaysMenus = decodedMenus
                             self.saveAtUserDefaults()
-                        }
-                        //if tomorrow
-                        else if date == "tomorrow"{
+                        case "tomorrow":
                             self.tomrrowsMenus = decodedMenus
-                        }
-                        else if date == "dayAfterTomorrow"{
+                        default:
                             self.dayAfterTomorrowMenus = decodedMenus
                         }
                         
