@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  widgetLargeCardView.swift
 //  포스밀
 //
 //  Created by Kim Insub on 2022/07/23.
@@ -8,33 +8,33 @@
 import SwiftUI
 import WidgetKit
 
-struct widgetMediumCardView: View{
-    @Environment(\.colorScheme) var colorScheme
+struct WidgetLargeCardView: View {
+
     @State var LUNCH_FOODS: [String]? = []
     @State var DINNER_FOODS: [String]? = []
-    let CURRENTDATE: [String:String]?
-    let scheduleDict: [String:String]
-    let mealNameDict: [String:String]
 
-    var body: some View {
+//    let scheduleDict: [String:String]
+//    let mealNameDict: [String:String]
 
-        HStack{
+    let scheduleDict = TimeManager().scheduleMediumSize
+    let mealNameDict = TimeManager().mealNameDict
+
+    var body: some View{
+
+        VStack{
             lunchMenuViewBuilder()
-
             Divider()
-                .padding(.vertical)
-
+                .padding(.horizontal)
             dinnerMenuViewBuilder()
         }
+        .background(Color.cardBackground)
         .onAppear{
             self.LUNCH_FOODS = []
-            self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "LUNCH") as [String]?
+            self.LUNCH_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")?.stringArray(forKey: "LUNCH") as? [String]
 
             self.DINNER_FOODS = []
-            self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: "DINNER") as [String]?
+            self.DINNER_FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")?.stringArray(forKey: "DINNER") as? [String]
         }
-        .background(Color.cardBackground)
-
     }
 
     @ViewBuilder func lunchMenuViewBuilder() -> some View {
@@ -100,7 +100,6 @@ struct widgetMediumCardView: View{
                     .background(Color.timeBackgroundColor)
                     .cornerRadius(10)
             }
-
             //Contents
             VStack(alignment: .leading, spacing: 2){
                 if DINNER_FOODS != nil{
@@ -126,5 +125,6 @@ struct widgetMediumCardView: View{
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
+
     }
 }

@@ -8,14 +8,15 @@
 import SwiftUI
 import WidgetKit
 
-struct widgetSmallCardView: View{
+struct WidgetSmallCardView: View{
 
     //Define
     @State var FOODS: [String]? = []
-    let CURRENTDATE: [String:String]?
-    let scheduleDict: [String:String]
+
     let selectedMeal: String?
-    let mealNameDict: [String:String]
+
+    let scheduleDict = TimeManager().schedule
+    let mealNameDict = TimeManager().mealNameDict
 
     var body: some View {
 
@@ -27,7 +28,7 @@ struct widgetSmallCardView: View{
         .background(Color.cardBackground)
         .onAppear{
             self.FOODS = []
-            self.FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")!.stringArray(forKey: self.selectedMeal ?? "LUNCH") as [String]?
+            self.FOODS = UserDefaults(suiteName: "group.com.kim.widgetProject")?.stringArray(forKey: self.selectedMeal ?? "LUNCH") as? [String]
         }
     }
 
@@ -47,7 +48,7 @@ struct widgetSmallCardView: View{
             }
             Spacer()
             //Time
-            Text(scheduleDict[selectedMeal ?? "LUNCH"]!)
+            Text((scheduleDict[selectedMeal ?? "LUNCH"]!))
                 .font(.system(size:12))
                 .foregroundColor(Color.timeForegroundColor)
                 .padding(.vertical, 3)

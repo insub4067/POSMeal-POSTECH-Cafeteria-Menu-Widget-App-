@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C63A3B522822A2D300FBCF96"
-               BuildableName = "myWidgetExtension.appex"
-               BlueprintName = "myWidgetExtension"
+               BuildableName = "PosmealWidgetExtension.appex"
+               BlueprintName = "posmealWidgetExtension"
                ReferencedContainer = "container:&#x1111;&#x1169;&#x1109;&#x1173;&#x1106;&#x1175;&#x11af;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

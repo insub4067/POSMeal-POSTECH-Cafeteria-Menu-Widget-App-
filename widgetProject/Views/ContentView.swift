@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
 
@@ -53,31 +54,37 @@ struct ContentView: View {
             .confirmationDialog("위젯에 보일 정보를 선택하세요", isPresented: self.$showSheet, titleVisibility: .visible){
                 Button("조식"){
                     self.selectedMeal = "BREAKFAST_A"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
                 }
                 Button("간단식"){
                     self.selectedMeal = "BREAKFAST_B"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("중식"){
                     self.selectedMeal = "LUNCH"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("석식"){
                     self.selectedMeal = "DINNER"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("위즈덤"){
                     self.selectedMeal = "STAFF"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("더 블루힐"){
                     self.selectedMeal = "INTERNATIONAL"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("시간에 맞추기"){
                     self.selectedMeal = "ONTIME"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
             }
         }
@@ -87,17 +94,22 @@ struct ContentView: View {
                 network.getMenus(of: "today")
                 network.getMenus(of: "tomorrow")
                 network.getMenus(of: "dayAfterTomorrow")
-                UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                updateSelectedMeal(meal: selectedMeal)
             }
         }
         .onAppear{
             network.getMenus(of: "today")
             network.getMenus(of: "tomorrow")
             network.getMenus(of: "dayAfterTomorrow")
-            UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+            updateSelectedMeal(meal: selectedMeal)
         }
         .fullScreenCover(isPresented: self.$isFirstLaunching){
             OnBoardingTabView(isFirstLaunching: self.$isFirstLaunching)
         }
     }
+}
+
+fileprivate func updateSelectedMeal(meal: String) {
+    UserDefaults(suiteName: "group.com.kim.widgetProject")?.set(meal, forKey: "SELECTEDMEAL")
+    WidgetCenter.shared.reloadTimelines(ofKind: "com.kim.widgetProject.myWidget")
 }

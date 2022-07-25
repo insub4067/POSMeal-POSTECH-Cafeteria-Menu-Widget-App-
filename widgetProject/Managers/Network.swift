@@ -36,7 +36,7 @@ class Network: ObservableObject {
             "dayAfterTomorrow" : dayAfterTomorrow
         ]
 
-        let year = String(calendar.component(.year, from: dateDict[date]!))
+        let year = String(calendar.component(.year, from: (dateDict[date])!))
         let month = calendar.component(.month, from: dateDict[date]!)
         let day = calendar.component(.day, from: dateDict[date]!)
         let weekday = String(calendar.component(.weekday, from: dateDict[date]!))
@@ -65,7 +65,7 @@ class Network: ObservableObject {
         
         //Store UserDefault Data
         let result = ["year": year, "month": refinedMonth, "day": refinedDay, "weekday": dayDict[weekday]!]
-        UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(result, forKey: "CURRENTDATE")
+        UserDefaults(suiteName: "group.com.kim.widgetProject")?.set(result, forKey: "CURRENTDATE")
         
         //Return
         return result
@@ -119,8 +119,38 @@ class Network: ObservableObject {
         }
         dataTask.resume()
     }
+
+//    func getMenusInBackground(of date: String) -> Void {
+//
+//        let configuration = URLSessionConfiguration.background(withIdentifier: "identifier")
+//        let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+//
+//        //Define
+//        let returnedDate = getDate(of: date)
+//        let year = returnedDate["year"]!
+//        let month = returnedDate["month"]!
+//        let day = returnedDate["day"]!
+//
+//        //URLRequest
+//        guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "GET"
+//
+//        let task = session.dataTask(with: urlRequest) { (url, response, error) in
+//
+//            if error != nil { return }
+//
+//            guard let response = response as? HTTPURLResponse else { return }
+//
+//            if response.statusCode == 200 {
+//                print(url!)
+//            }
+//        }
+//        task.resume()
+//    }
+
     //Devide Data
-    func saveAtUserDefaults(){
+    func saveAtUserDefaults() {
         
         for menu in todaysMenus {
             //BREAKFAST_A

@@ -15,24 +15,9 @@ struct MenuView: View {
     // param
     let date: String
     let menuIndex: Int
-    
-    let myDict = [
-        "BREAKFAST_A" : "조식",
-        "BREAKFAST_B" : "간단식",
-        "LUNCH" : "중식",
-        "DINNER" : "석식",
-        "STAFF" : "위즈덤",
-        "INTERNATIONAL" : "더 블루힐"
-    ]
-    
-    let scheduleDict = [
-        "BREAKFAST_A" : "07:30 ~ 09:00",
-        "BREAKFAST_B" : "07:30 ~ 09:00",
-        "LUNCH" : "11:30 ~ 13:30",
-        "DINNER" : "17:30 ~ 19:00",
-        "STAFF" : "11:50 ~ 13:00",
-        "INTERNATIONAL" : "11:30 ~ 13:30"
-    ]
+
+    let mealNameDict = TimeManager().mealNameDict
+    let scheduleDict = TimeManager().scheduleMediumSize
 
     var body: some View {
         let date = network.getDate(of: date)
@@ -56,7 +41,7 @@ struct MenuView: View {
                             //Title
                             HStack{
                                 //Name
-                                Text(myDict[menu.type]!)
+                                Text(mealNameDict[menu.type]!)
                                     .bold()
                                 Spacer()
                                 //Time

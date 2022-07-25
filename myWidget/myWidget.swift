@@ -9,7 +9,9 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+
     @EnvironmentObject var network: Network
+    
     let date = Date()
 
     //PlACEHOLDER
@@ -42,7 +44,8 @@ struct SimpleEntry: TimelineEntry {
 
 @main
 struct myWidget: Widget {
-    let kind: String = "포스밀 위젯"
+
+    let kind: String = "com.kim.widgetProject.myWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -50,6 +53,12 @@ struct myWidget: Widget {
         }
         .configurationDisplayName("포스밀 위젯")
         .description("설정된 식당에 대한 오늘의 메뉴를 보여줍니다.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies(
+            [
+                .systemSmall,
+                .systemMedium,
+                .systemLarge,
+            ]
+        )
     }
 }
