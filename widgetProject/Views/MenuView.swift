@@ -8,29 +8,16 @@
 import SwiftUI
 
 struct MenuView: View {
-    @Environment(\.colorScheme) var colorScheme
+
+    // environment
     @EnvironmentObject var network: Network
-    
+
+    // param
     let date: String
     let menuIndex: Int
-    
-    let myDict = [
-        "BREAKFAST_A" : "조식",
-        "BREAKFAST_B" : "간단식",
-        "LUNCH" : "중식",
-        "DINNER" : "석식",
-        "STAFF" : "위즈덤",
-        "INTERNATIONAL" : "더 블루힐"
-    ]
-    
-    let scheduleDict = [
-        "BREAKFAST_A" : "07:30 ~ 09:00",
-        "BREAKFAST_B" : "07:30 ~ 09:00",
-        "LUNCH" : "11:30 ~ 13:30",
-        "DINNER" : "17:30 ~ 19:00",
-        "STAFF" : "11:50 ~ 13:00",
-        "INTERNATIONAL" : "11:30 ~ 13:30"
-    ]
+
+    let mealNameDict = TimeManager().mealNameDict
+    let scheduleDict = TimeManager().scheduleMediumSize
 
     var body: some View {
         let date = network.getDate(of: date)
@@ -38,12 +25,6 @@ struct MenuView: View {
         let month = date["month"]!
         let day = date["day"]!
         let weekday = date["weekday"]!
-        
-        let darkModeForeground = Color(red: 200/255, green: 200/255, blue: 200/255)
-        let darkModeBackgroundColor = Color(red: 28/255, green: 28/255, blue: 30/255)
-        let timeDarkModeBackground = Color(red: 60/255, green: 60/255, blue: 60/255)
-        let timeLightModeBackground = Color(red: 240/255, green: 240/255, blue: 240/255)
-        let timeLightModeForeground = Color(red: 105/255, green: 105/255, blue: 105/255)
         
         let menusList = [network.todaysMenus, network.tomrrowsMenus, network.dayAfterTomorrowMenus]
                 
@@ -60,16 +41,16 @@ struct MenuView: View {
                             //Title
                             HStack{
                                 //Name
-                                Text(myDict[menu.type]!)
+                                Text(mealNameDict[menu.type]!)
                                     .bold()
                                 Spacer()
                                 //Time
                                 Text(scheduleDict[menu.type]!)
                                     .font(.system(size: 12))
-                                    .foregroundColor(colorScheme == .dark ? darkModeForeground : timeLightModeForeground)
+                                    .foregroundColor(Color.timeForegroundColor)
                                     .padding(.vertical, 3)
                                     .padding(.horizontal, 5)
-                                    .background(colorScheme == .dark ? timeDarkModeBackground : timeLightModeBackground)
+                                    .background(Color.timeBackgroundColor)
                                     .cornerRadius(20)
                             }
                             //Food
@@ -78,13 +59,13 @@ struct MenuView: View {
                                     let check = food.isMain == true ? "*" : ""
                                     Text(food.name_kor + check)
                                         .font(.system(size: 15))
-                                        .foregroundColor(colorScheme == .dark ? darkModeForeground : Color.black)
+                                        .foregroundColor(Color.foodForeground)
                                 }
                             }
                         }
                         .frame(width: 300, alignment: .leading)
                         .padding()
-                        .background(colorScheme == .dark ? darkModeBackgroundColor : Color.white)
+                        .background(Color.cardBackground)
                         .cornerRadius(10)
                     }
                     .frame(maxWidth: .infinity)

@@ -6,21 +6,25 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
-    //Define
-    @Environment(\.colorScheme) var colorScheme
+
+    // Define
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var network: Network
     @AppStorage("isFirstLaunching") var isFirstLaunching: Bool = true
     @State private var showSheet = false
     @State private var selectedMeal = "ONTIME"
 
+    // init
+    init(){
+        UIPageControl.appearance().currentPageIndicatorTintColor = Color.currentPageIndicatorTintColor
+        UIPageControl.appearance().pageIndicatorTintColor = Color.pageIndicatorTintColor
+    }
+
+    // body
     var body: some View {
-        
-        let lightModeBackgroundColor = Color(red: 242/255, green: 242/255, blue: 246/255)        
-        let lightGray = UIColor(Color(red: 200/255, green: 200/255, blue: 200/255))
-        let darkGray = UIColor(Color(red: 120/255, green: 120/255, blue: 120/255))
         
         NavigationView {
             TabView{
@@ -29,15 +33,12 @@ struct ContentView: View {
                 MenuView(date: "dayAfterTomorrow", menuIndex: 2)
             }
             .onAppear{
-                // TabView Page Indicator
-                UIPageControl.appearance().currentPageIndicatorTintColor = colorScheme == .dark ?  lightGray : darkGray
-                UIPageControl.appearance().pageIndicatorTintColor = colorScheme == .dark ? darkGray : lightGray
                 // Lock on Portrait Mode
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
                 AppDelegate.orientationLock = .portrait
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-            .background(colorScheme == .dark ? Color.black : lightModeBackgroundColor)
+            .background(Color.backgroundColor)
             .navigationBarHidden(true)
             .toolbar{
                 ToolbarItemGroup(placement: ToolbarItemPlacement.bottomBar){
@@ -53,31 +54,37 @@ struct ContentView: View {
             .confirmationDialog("위젯에 보일 정보를 선택하세요", isPresented: self.$showSheet, titleVisibility: .visible){
                 Button("조식"){
                     self.selectedMeal = "BREAKFAST_A"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
                 }
                 Button("간단식"){
                     self.selectedMeal = "BREAKFAST_B"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("중식"){
                     self.selectedMeal = "LUNCH"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("석식"){
                     self.selectedMeal = "DINNER"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("위즈덤"){
                     self.selectedMeal = "STAFF"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("더 블루힐"){
                     self.selectedMeal = "INTERNATIONAL"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
                 Button("시간에 맞추기"){
                     self.selectedMeal = "ONTIME"
-                    UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                    updateSelectedMeal(meal: selectedMeal)
+
                 }
             }
         }
@@ -87,17 +94,22 @@ struct ContentView: View {
                 network.getMenus(of: "today")
                 network.getMenus(of: "tomorrow")
                 network.getMenus(of: "dayAfterTomorrow")
-                UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+                updateSelectedMeal(meal: selectedMeal)
             }
         }
         .onAppear{
             network.getMenus(of: "today")
             network.getMenus(of: "tomorrow")
             network.getMenus(of: "dayAfterTomorrow")
-            UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(self.selectedMeal, forKey: "SELECTEDMEAL")
+            updateSelectedMeal(meal: selectedMeal)
         }
         .fullScreenCover(isPresented: self.$isFirstLaunching){
             OnBoardingTabView(isFirstLaunching: self.$isFirstLaunching)
         }
     }
+}
+
+fileprivate func updateSelectedMeal(meal: String) {
+    UserDefaults(suiteName: "group.com.kim.widgetProject")?.set(meal, forKey: "SELECTEDMEAL")
+    WidgetCenter.shared.reloadTimelines(ofKind: "com.kim.widgetProject.myWidget")
 }

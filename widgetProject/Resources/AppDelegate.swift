@@ -57,7 +57,8 @@ extension AppDelegate: MessagingDelegate {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate{
+class AppDelegate: NSObject, UIApplicationDelegate {
+
     let gcmMessageIDKey = "gcm.message_id"
     let aps = "aps"
     let data1Key = "DATA1"
@@ -86,6 +87,7 @@ class AppDelegate: NSObject, UIApplicationDelegate{
         application.registerForRemoteNotifications()
         return true
     }
+
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let messageID = userInfo[gcmMessageIDKey]{
             print("Message ID : \(messageID)")

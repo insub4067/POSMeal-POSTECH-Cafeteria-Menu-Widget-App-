@@ -22,9 +22,9 @@ class Network: ObservableObject {
     
     //GET DATE of TODAY || TOMORROW
     @discardableResult
-    func getDate(of: String) -> [String:String]{
+    func getDate(of date: String) -> [String:String]{
+        
         //Define
-        let date = of
         let calendar = Calendar.current
         let today = Date()
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
@@ -36,7 +36,7 @@ class Network: ObservableObject {
             "dayAfterTomorrow" : dayAfterTomorrow
         ]
 
-        let year = String(calendar.component(.year, from: dateDict[date]!))
+        let year = String(calendar.component(.year, from: (dateDict[date])!))
         let month = calendar.component(.month, from: dateDict[date]!)
         let day = calendar.component(.day, from: dateDict[date]!)
         let weekday = String(calendar.component(.weekday, from: dateDict[date]!))
@@ -65,16 +65,16 @@ class Network: ObservableObject {
         
         //Store UserDefault Data
         let result = ["year": year, "month": refinedMonth, "day": refinedDay, "weekday": dayDict[weekday]!]
-        UserDefaults(suiteName: "group.com.kim.widgetProject")!.set(result, forKey: "CURRENTDATE")
+        UserDefaults(suiteName: "group.com.kim.widgetProject")?.set(result, forKey: "CURRENTDATE")
         
         //Return
         return result
     }
     
     //GET MENUS OF A DAY
-    func getMenus(of: String) -> Void {
+    func getMenus(of date: String) -> Void {
+
         //Define
-        let date = of
         let returnedDate = getDate(of: date)
         let year = returnedDate["year"]!
         let month = returnedDate["month"]!
@@ -100,17 +100,14 @@ class Network: ObservableObject {
                     do {
                         //Decode
                         let decodedMenus = try JSONDecoder().decode([Menu].self, from: data)
-                        
-                        //if today
-                        if of == "today"{
+
+                        switch date {
+                        case "today":
                             self.todaysMenus = decodedMenus
                             self.saveAtUserDefaults()
-                        }
-                        //if tomorrow
-                        else if of == "tomorrow"{
+                        case "tomorrow":
                             self.tomrrowsMenus = decodedMenus
-                        }
-                        else if of == "dayAfterTomorrow"{
+                        default:
                             self.dayAfterTomorrowMenus = decodedMenus
                         }
                         
@@ -122,8 +119,38 @@ class Network: ObservableObject {
         }
         dataTask.resume()
     }
+
+//    func getMenusInBackground(of date: String) -> Void {
+//
+//        let configuration = URLSessionConfiguration.background(withIdentifier: "identifier")
+//        let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+//
+//        //Define
+//        let returnedDate = getDate(of: date)
+//        let year = returnedDate["year"]!
+//        let month = returnedDate["month"]!
+//        let day = returnedDate["day"]!
+//
+//        //URLRequest
+//        guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "GET"
+//
+//        let task = session.dataTask(with: urlRequest) { (url, response, error) in
+//
+//            if error != nil { return }
+//
+//            guard let response = response as? HTTPURLResponse else { return }
+//
+//            if response.statusCode == 200 {
+//                print(url!)
+//            }
+//        }
+//        task.resume()
+//    }
+
     //Devide Data
-    func saveAtUserDefaults(){
+    func saveAtUserDefaults() {
         
         for menu in todaysMenus {
             //BREAKFAST_A
