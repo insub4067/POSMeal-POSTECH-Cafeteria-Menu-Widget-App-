@@ -1,14 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "watch",
-      "scale" : "2x"
+      "filename" : "포스밀_32-1.png",
+      "idiom" : "universal"
     },
     {
-      "filename" : "94.png",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "screen-width" : ">183"
+      "filename" : "포스밀_32.png",
+      "idiom" : "watch"
     }
   ],
   "info" : {
