@@ -10,13 +10,18 @@
 		349123D7289E0B5000718AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123D6289E0B5000718AB7 /* Assets.xcassets */; };
 		349123DD289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		349123E2289E0B5000718AB7 /* _______App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E1289E0B5000718AB7 /* _______App.swift */; };
-		349123E4289E0B5000718AB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E3289E0B5000718AB7 /* ContentView.swift */; };
 		349123E6289E0B5000718AB7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E5289E0B5000718AB7 /* NotificationController.swift */; };
 		349123E8289E0B5000718AB7 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E7289E0B5000718AB7 /* NotificationView.swift */; };
 		349123EA289E0B5000718AB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E9289E0B5000718AB7 /* ComplicationController.swift */; };
 		349123EC289E0B5100718AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123EB289E0B5100718AB7 /* Assets.xcassets */; };
 		349123EF289E0B5100718AB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123EE289E0B5100718AB7 /* Preview Assets.xcassets */; };
 		349123F4289E0B5100718AB7 /* POSmealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 349123D4289E0B4E00718AB7 /* POSmealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		349123FE289E0F3A00718AB7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13462822A72000D3EA1A /* Network.swift */; };
+		34912400289E10F900718AB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123FF289E10F900718AB7 /* ContentView.swift */; };
+		34912404289E116E00718AB7 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C9B4C288B953200DA1238 /* Color+.swift */; };
+		34912405289E120B00718AB7 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
+		34912406289E121100718AB7 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
+		34912408289E134A00718AB7 /* Watch_MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34912407289E134A00718AB7 /* Watch_MenuView.swift */; };
 		C603010A288C47E50094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C603010F288CA34B0094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
@@ -114,7 +119,6 @@
 		349123D6289E0B5000718AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "POSmealWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		349123E1289E0B5000718AB7 /* _______App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_______App.swift"; sourceTree = "<group>"; };
-		349123E3289E0B5000718AB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		349123E5289E0B5000718AB7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		349123E7289E0B5000718AB7 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		349123E9289E0B5000718AB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		349123EE289E0B5100718AB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		349123F0289E0B5100718AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		349123F1289E0B5100718AB7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		349123FF289E10F900718AB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34912407289E134A00718AB7 /* Watch_MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch_MenuView.swift; sourceTree = "<group>"; };
 		C6030109288C47E50094C3AD /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
@@ -192,7 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				349123E1289E0B5000718AB7 /* _______App.swift */,
-				349123E3289E0B5000718AB7 /* ContentView.swift */,
+				349123FF289E10F900718AB7 /* ContentView.swift */,
+				34912407289E134A00718AB7 /* Watch_MenuView.swift */,
 				349123E5289E0B5000718AB7 /* NotificationController.swift */,
 				349123E7289E0B5000718AB7 /* NotificationView.swift */,
 				349123E9289E0B5000718AB7 /* ComplicationController.swift */,
@@ -516,10 +523,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34912404289E116E00718AB7 /* Color+.swift in Sources */,
+				34912405289E120B00718AB7 /* MenuModel.swift in Sources */,
 				349123E6289E0B5000718AB7 /* NotificationController.swift in Sources */,
-				349123E4289E0B5000718AB7 /* ContentView.swift in Sources */,
+				349123FE289E0F3A00718AB7 /* Network.swift in Sources */,
+				34912400289E10F900718AB7 /* ContentView.swift in Sources */,
+				34912408289E134A00718AB7 /* Watch_MenuView.swift in Sources */,
 				349123EA289E0B5000718AB7 /* ComplicationController.swift in Sources */,
 				349123E2289E0B5000718AB7 /* _______App.swift in Sources */,
+				34912406289E121100718AB7 /* TimeManager.swift in Sources */,
 				349123E8289E0B5000718AB7 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,7 +896,7 @@
 				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";
@@ -913,7 +925,7 @@
 				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "포스밀";

@@ -5,6 +5,7 @@
 //  Created by Kim Insub on 2022/05/04.
 //
 import SwiftUI
+import Foundation
 
 class Network: ObservableObject {
     

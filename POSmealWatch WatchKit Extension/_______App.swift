@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct _______App: App {
+    var network = Network()
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .environmentObject(network)
             }
         }
 
