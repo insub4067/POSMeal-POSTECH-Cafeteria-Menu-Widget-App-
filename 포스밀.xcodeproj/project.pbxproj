@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		349123D7289E0B5000718AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123D6289E0B5000718AB7 /* Assets.xcassets */; };
+		349123DD289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		349123E2289E0B5000718AB7 /* _______App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E1289E0B5000718AB7 /* _______App.swift */; };
+		349123E4289E0B5000718AB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E3289E0B5000718AB7 /* ContentView.swift */; };
+		349123E6289E0B5000718AB7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E5289E0B5000718AB7 /* NotificationController.swift */; };
+		349123E8289E0B5000718AB7 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E7289E0B5000718AB7 /* NotificationView.swift */; };
+		349123EA289E0B5000718AB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349123E9289E0B5000718AB7 /* ComplicationController.swift */; };
+		349123EC289E0B5100718AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123EB289E0B5100718AB7 /* Assets.xcassets */; };
+		349123EF289E0B5100718AB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349123EE289E0B5100718AB7 /* Preview Assets.xcassets */; };
+		349123F4289E0B5100718AB7 /* POSmealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 349123D4289E0B4E00718AB7 /* POSmealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C603010A288C47E50094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C603010F288CA34B0094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
@@ -40,6 +50,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		349123DE289E0B5000718AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349123DB289E0B5000718AB7;
+			remoteInfo = "POSmealWatch WatchKit Extension";
+		};
+		349123F2289E0B5100718AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349123D3289E0B4E00718AB7;
+			remoteInfo = POSmealWatch;
+		};
 		C63A3B5F2822A2D400FBCF96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C63A3B362822A26400FBCF96 /* Project object */;
@@ -50,6 +74,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		349123F8289E0B5100718AB7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				349123DD289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349123FC289E0B5100718AB7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				349123F4289E0B5100718AB7 /* POSmealWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B652822A2D400FBCF96 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +110,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		349123D4289E0B4E00718AB7 /* POSmealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSmealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		349123D6289E0B5000718AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "POSmealWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		349123E1289E0B5000718AB7 /* _______App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_______App.swift"; sourceTree = "<group>"; };
+		349123E3289E0B5000718AB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		349123E5289E0B5000718AB7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		349123E7289E0B5000718AB7 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		349123E9289E0B5000718AB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		349123EB289E0B5100718AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		349123EE289E0B5100718AB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		349123F0289E0B5100718AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		349123F1289E0B5100718AB7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		C6030109288C47E50094C3AD /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
@@ -94,6 +152,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		349123D9289E0B5000718AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3B2822A26400FBCF96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,12 +180,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		349123D5289E0B4E00718AB7 /* POSmealWatch */ = {
+			isa = PBXGroup;
+			children = (
+				349123D6289E0B5000718AB7 /* Assets.xcassets */,
+			);
+			path = POSmealWatch;
+			sourceTree = "<group>";
+		};
+		349123E0289E0B5000718AB7 /* POSmealWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				349123E1289E0B5000718AB7 /* _______App.swift */,
+				349123E3289E0B5000718AB7 /* ContentView.swift */,
+				349123E5289E0B5000718AB7 /* NotificationController.swift */,
+				349123E7289E0B5000718AB7 /* NotificationView.swift */,
+				349123E9289E0B5000718AB7 /* ComplicationController.swift */,
+				349123EB289E0B5100718AB7 /* Assets.xcassets */,
+				349123F0289E0B5100718AB7 /* Info.plist */,
+				349123F1289E0B5100718AB7 /* PushNotificationPayload.apns */,
+				349123ED289E0B5100718AB7 /* Preview Content */,
+			);
+			path = "POSmealWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		349123ED289E0B5100718AB7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				349123EE289E0B5100718AB7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		C63A3B352822A26400FBCF96 = {
 			isa = PBXGroup;
 			children = (
 				C6CC134D2822A9CD00D3EA1A /* myWidgetExtension.entitlements */,
 				C63A3B402822A26400FBCF96 /* widgetProject */,
 				C63A3B592822A2D300FBCF96 /* myWidget */,
+				349123D5289E0B4E00718AB7 /* POSmealWatch */,
+				349123E0289E0B5000718AB7 /* POSmealWatch WatchKit Extension */,
 				C63A3B542822A2D300FBCF96 /* Frameworks */,
 				C63A3B3F2822A26400FBCF96 /* Products */,
 			);
@@ -131,6 +230,8 @@
 			children = (
 				C63A3B3E2822A26400FBCF96 /* 포스밀.app */,
 				C63A3B532822A2D300FBCF96 /* posmealWidgetExtension.appex */,
+				349123D4289E0B4E00718AB7 /* POSmealWatch.app */,
+				349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +348,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		349123D3289E0B4E00718AB7 /* POSmealWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349123F9289E0B5100718AB7 /* Build configuration list for PBXNativeTarget "POSmealWatch" */;
+			buildPhases = (
+				349123D2289E0B4E00718AB7 /* Resources */,
+				349123F8289E0B5100718AB7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349123DF289E0B5000718AB7 /* PBXTargetDependency */,
+			);
+			name = POSmealWatch;
+			productName = POSmealWatch;
+			productReference = 349123D4289E0B4E00718AB7 /* POSmealWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		349123DB289E0B5000718AB7 /* POSmealWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349123F5289E0B5100718AB7 /* Build configuration list for PBXNativeTarget "POSmealWatch WatchKit Extension" */;
+			buildPhases = (
+				349123D8289E0B5000718AB7 /* Sources */,
+				349123D9289E0B5000718AB7 /* Frameworks */,
+				349123DA289E0B5000718AB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "POSmealWatch WatchKit Extension";
+			productName = "POSmealWatch WatchKit Extension";
+			productReference = 349123DC289E0B5000718AB7 /* POSmealWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		C63A3B3D2822A26400FBCF96 /* 포스밀 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C63A3B4C2822A26400FBCF96 /* Build configuration list for PBXNativeTarget "포스밀" */;
@@ -255,11 +390,13 @@
 				C63A3B3B2822A26400FBCF96 /* Frameworks */,
 				C63A3B3C2822A26400FBCF96 /* Resources */,
 				C63A3B652822A2D400FBCF96 /* Embed App Extensions */,
+				349123FC289E0B5100718AB7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C63A3B602822A2D400FBCF96 /* PBXTargetDependency */,
+				349123F3289E0B5100718AB7 /* PBXTargetDependency */,
 			);
 			name = "포스밀";
 			packageProductDependencies = (
@@ -294,9 +431,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					349123D3289E0B4E00718AB7 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					349123DB289E0B5000718AB7 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					C63A3B3D2822A26400FBCF96 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -323,11 +466,30 @@
 			targets = (
 				C63A3B3D2822A26400FBCF96 /* 포스밀 */,
 				C63A3B522822A2D300FBCF96 /* posmealWidgetExtension */,
+				349123D3289E0B4E00718AB7 /* POSmealWatch */,
+				349123DB289E0B5000718AB7 /* POSmealWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		349123D2289E0B4E00718AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349123D7289E0B5000718AB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349123DA289E0B5000718AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349123EF289E0B5100718AB7 /* Preview Assets.xcassets in Resources */,
+				349123EC289E0B5100718AB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3C2822A26400FBCF96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +512,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		349123D8289E0B5000718AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349123E6289E0B5000718AB7 /* NotificationController.swift in Sources */,
+				349123E4289E0B5000718AB7 /* ContentView.swift in Sources */,
+				349123EA289E0B5000718AB7 /* ComplicationController.swift in Sources */,
+				349123E2289E0B5000718AB7 /* _______App.swift in Sources */,
+				349123E8289E0B5000718AB7 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C63A3B3A2822A26400FBCF96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +561,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		349123DF289E0B5000718AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349123DB289E0B5000718AB7 /* POSmealWatch WatchKit Extension */;
+			targetProxy = 349123DE289E0B5000718AB7 /* PBXContainerItemProxy */;
+		};
+		349123F3289E0B5100718AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349123D3289E0B4E00718AB7 /* POSmealWatch */;
+			targetProxy = 349123F2289E0B5100718AB7 /* PBXContainerItemProxy */;
+		};
 		C63A3B602822A2D400FBCF96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -396,6 +580,120 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		349123F6289E0B5100718AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"POSmealWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "POSmealWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "POSmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		349123F7289E0B5100718AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"POSmealWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "POSmealWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "POSmealWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		349123FA289E0B5100718AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = POSmealWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = POSmealWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kim.widgetProject;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		349123FB289E0B5100718AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = POSmealWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = POSmealWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kim.widgetProject;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kim.widgetProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		C63A3B4A2822A26400FBCF96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,7 +818,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "--------Info.plist";
@@ -554,7 +852,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetProject/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 76AJ433CP5;
+				DEVELOPMENT_TEAM = JPL38XBHJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "--------Info.plist";
@@ -639,6 +937,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		349123F5289E0B5100718AB7 /* Build configuration list for PBXNativeTarget "POSmealWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349123F6289E0B5100718AB7 /* Debug */,
+				349123F7289E0B5100718AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349123F9289E0B5100718AB7 /* Build configuration list for PBXNativeTarget "POSmealWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349123FA289E0B5100718AB7 /* Debug */,
+				349123FB289E0B5100718AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C63A3B392822A26400FBCF96 /* Build configuration list for PBXProject "포스밀" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
