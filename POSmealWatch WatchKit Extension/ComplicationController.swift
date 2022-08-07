@@ -14,7 +14,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "포스밀", supportedFamilies: CLKComplicationFamily.allCases)
+            CLKComplicationDescriptor(identifier: "complication", displayName: "포스밀", supportedFamilies: [
+                .circularSmall,
+                .graphicCorner,
+                .modularSmall,
+                .graphicCircular
+            ])
             // Multiple complication support can be added here with more descriptors
         ]
         
@@ -42,18 +47,70 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        
+        switch complication.family {
+        
+        case .circularSmall:
+            handler(CLKComplicationTimelineEntry(date: Date(),
+                                                 complicationTemplate: CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(named: "포스밀_글자_40.png")!))))
+            return
+        case .graphicCorner:
+            
+            handler(CLKComplicationTimelineEntry(date: Date(),
+                                                 complicationTemplate: CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_글자_40.png")!))))
+            return
+        case .modularSmall:
+            
+            handler(CLKComplicationTimelineEntry(date: Date(),
+                                                 complicationTemplate: CLKComplicationTemplateModularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(named: "포스밀_글자_40.png")!))))
+            return
+        
+        case .graphicCircular:
+            handler(CLKComplicationTimelineEntry(date: Date(),
+                                                complicationTemplate: CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_글자_40.png")!))))
+            return
+            
+        default:
+            handler(nil)
+            return
+        }
     }
     
-    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries after the given date
-        handler(nil)
-    }
+//    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+//        // Call the handler with the timeline entries after the given date
+//        handler(nil)
+//    }
 
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        
+        switch complication.family {
+        
+        case .circularSmall:
+            
+            handler(CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(named: "포스밀_글자_40.png")!)))
+            return
+            
+        case .graphicCorner:
+            
+            handler(CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_글자_40.png")!)))
+            return
+            
+        case .modularSmall:
+            
+            handler(CLKComplicationTemplateModularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(named: "포스밀_글자_40.png")!)))
+            return
+            
+        case .graphicCircular:
+            
+            handler(CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "포스밀_글자_40.png")!)))
+            return
+            
+        default:
+            handler(nil)
+            return
+        }
     }
 }

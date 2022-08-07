@@ -32,7 +32,6 @@ struct ContentView: View {
         }
         .background(Color.black)
 
-//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
     }
 }
 
