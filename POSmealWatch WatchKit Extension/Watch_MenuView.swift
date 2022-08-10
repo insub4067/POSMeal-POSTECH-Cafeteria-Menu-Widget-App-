@@ -29,10 +29,10 @@ struct MenuView: View {
         let menusList = [network.todaysMenus, network.tomrrowsMenus, network.dayAfterTomorrowMenus]
         
         VStack {
-            Text("\(month)월 \(day)일 \(weekday)")
-                .font(.title3)
-                .bold()
-                .padding(.bottom, 5)
+//            Text("\(month)월 \(day)일 \(weekday)")
+//                .font(.title3)
+//                .bold()
+//                .padding(.bottom, 5)
             
             ScrollView {
                 VStack(spacing: 17) {
@@ -72,5 +72,6 @@ struct MenuView: View {
                 }
             }
         }
+        .navigationTitle("\(month)월 \(day)일 \(weekday)")
     }
 }
