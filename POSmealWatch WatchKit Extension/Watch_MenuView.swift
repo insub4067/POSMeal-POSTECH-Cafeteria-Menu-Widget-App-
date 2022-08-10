@@ -19,6 +19,8 @@ struct MenuView: View {
     let mealNameDict = TimeManager().mealNameDict
     let scheduleDict = TimeManager().scheduleMediumSize
     
+    @State var showMealList: [Bool] = [true, true, true, true, true, true, true]
+    
     var body: some View {
         let date = network.getDate(of: date)
         
@@ -29,48 +31,49 @@ struct MenuView: View {
         let menusList = [network.todaysMenus, network.tomrrowsMenus, network.dayAfterTomorrowMenus]
         
         VStack {
-//            Text("\(month)월 \(day)일 \(weekday)")
-//                .font(.title3)
-//                .bold()
-//                .padding(.bottom, 5)
-            
             ScrollView {
                 VStack(spacing: 17) {
-                    ForEach(menusList[menuIndex]) { menu in
-                        //CARD
-                        VStack(alignment: .leading) {
-                            //Title
-                            HStack{
-                                //Name
-                                Text(mealNameDict[menu.type]!)
-                                    .bold()
-                                Spacer()
-                                //Time
-                                Text(scheduleDict[menu.type]!)
-                                    .font(.system(size: 12))
-                                    .foregroundColor(Color.timeForegroundColor)
-                                    .padding(.vertical, 3)
-                                    .padding(.horizontal, 5)
-                                    .background(Color.timeBackgroundColor)
-                                    .cornerRadius(20)
-                            }
-                            //Food
-                            VStack(alignment: .leading, spacing: 6) {
-                                ForEach(menu.foods) { food in
-                                    let check = food.isMain == true ? "*" : ""
-                                    Text(food.name_kor + check)
-                                        .font(.system(size: 15))
-                                        .foregroundColor(Color.foodForeground)
+                    ForEach(menusList[menuIndex].indices, id: \.self) { idx in
+                        
+                        if showMealList[idx] {
+                            //CARD
+                            VStack(alignment: .leading) {
+                                //Title
+                                HStack{
+                                    //Name
+                                    Text(mealNameDict[menusList[menuIndex][idx].type]!)
+                                        .bold()
+                                    Spacer()
+                                    //Time
+                                    Text(scheduleDict[menusList[menuIndex][idx].type]!)
+                                        .font(.system(size: 12))
+                                        .foregroundColor(Color.timeForegroundColor)
+                                        .padding(.vertical, 3)
+                                        .padding(.horizontal, 5)
+                                        .background(Color.timeBackgroundColor)
+                                        .cornerRadius(20)
+                                }
+                                //Food
+                                VStack(alignment: .leading, spacing: 6) {
+                                    ForEach(menusList[menuIndex][idx].foods) { food in
+                                        let check = food.isMain == true ? "*" : ""
+                                        Text(food.name_kor + check)
+                                            .font(.system(size: 15))
+                                            .foregroundColor(Color.foodForeground)
+                                    }
                                 }
                             }
+                            .frame(alignment: .leading)
+                            .padding()
+                            .background(Color.cardBackground)
+                            .cornerRadius(10)
                         }
-                        .frame(alignment: .leading)
-                        .padding()
-                        .background(Color.cardBackground)
-                        .cornerRadius(10)
                     }
                 }
             }
+        }
+        .onAppear {
+            self.showMealList = (UserDefaults.standard.array(forKey: "ShowMealList") ?? [true, true, true, true, true, true, true]) as! [Bool]
         }
         .navigationTitle("\(month)월 \(day)일 \(weekday)")
     }

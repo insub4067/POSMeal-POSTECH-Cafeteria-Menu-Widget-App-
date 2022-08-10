@@ -23,12 +23,14 @@ struct ContentView: View {
             MenuView(date: "today", menuIndex: 0)
             MenuView(date: "tomorrow", menuIndex: 1)
             MenuView(date: "dayAfterTomorrow", menuIndex: 2)
+            SettingView()
         }
         .onAppear{
             network.getMenus(of: "today")
             network.getMenus(of: "tomorrow")
             network.getMenus(of: "dayAfterTomorrow")
             updateSelectedMeal(meal: selectedMeal)
+            
         }
         .background(Color.black)
 

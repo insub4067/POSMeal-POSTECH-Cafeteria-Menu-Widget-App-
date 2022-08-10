@@ -22,6 +22,7 @@
 		34912405289E120B00718AB7 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC13482822A75400D3EA1A /* MenuModel.swift */; };
 		34912406289E121100718AB7 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		34912408289E134A00718AB7 /* Watch_MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34912407289E134A00718AB7 /* Watch_MenuView.swift */; };
+		34B4B05D28A3B091005A17CC /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4B05C28A3B091005A17CC /* SettingView.swift */; };
 		C603010A288C47E50094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C603010F288CA34B0094C3AD /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6030109288C47E50094C3AD /* TimeManager.swift */; };
 		C63A3B422822A26400FBCF96 /* widgetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */; };
@@ -128,6 +129,7 @@
 		349123F1289E0B5100718AB7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		349123FF289E10F900718AB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34912407289E134A00718AB7 /* Watch_MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch_MenuView.swift; sourceTree = "<group>"; };
+		34B4B05C28A3B091005A17CC /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C6030109288C47E50094C3AD /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		C63A3B3E2822A26400FBCF96 /* 포스밀.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "포스밀.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A3B412822A26400FBCF96 /* widgetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetProjectApp.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				349123E1289E0B5000718AB7 /* _______App.swift */,
 				349123FF289E10F900718AB7 /* ContentView.swift */,
 				34912407289E134A00718AB7 /* Watch_MenuView.swift */,
+				34B4B05C28A3B091005A17CC /* SettingView.swift */,
 				349123E5289E0B5000718AB7 /* NotificationController.swift */,
 				349123E7289E0B5000718AB7 /* NotificationView.swift */,
 				349123E9289E0B5000718AB7 /* ComplicationController.swift */,
@@ -533,6 +536,7 @@
 				349123E2289E0B5000718AB7 /* _______App.swift in Sources */,
 				34912406289E121100718AB7 /* TimeManager.swift in Sources */,
 				349123E8289E0B5000718AB7 /* NotificationView.swift in Sources */,
+				34B4B05D28A3B091005A17CC /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
