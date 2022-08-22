@@ -20,9 +20,6 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-
-        network.getMenus(of: "today")
-
         let entry = SimpleEntry(date: date)
         completion(entry)
     }
@@ -30,11 +27,19 @@ struct Provider: TimelineProvider {
     //VIEW REFRESH
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
 
-        let entry = SimpleEntry(date: date)
+        Task {
+            let entry = SimpleEntry(date: date)
 
-        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())
-        let timeline = Timeline(entries: [entry], policy: .after(nextUpdate!))
-        completion(timeline)
+            do {
+                try await Network.shared.getMenus(of: "today")
+
+                let nextUpdate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())
+                let timeline = Timeline(entries: [entry], policy: .after(nextUpdate!))
+                completion(timeline)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
