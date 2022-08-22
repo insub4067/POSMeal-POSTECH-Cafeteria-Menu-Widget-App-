@@ -19,6 +19,8 @@ class Network: ObservableObject {
     var DINNER: [String] = []
     var STAFF: [String] = []
     var INTERNATIONAL: [String] = []
+
+    static let shared = Network()
     
     //GET DATE of TODAY || TOMORROW
     @discardableResult
@@ -120,34 +122,6 @@ class Network: ObservableObject {
         dataTask.resume()
     }
 
-//    func getMenusInBackground(of date: String) -> Void {
-//
-//        let configuration = URLSessionConfiguration.background(withIdentifier: "identifier")
-//        let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
-//
-//        //Define
-//        let returnedDate = getDate(of: date)
-//        let year = returnedDate["year"]!
-//        let month = returnedDate["month"]!
-//        let day = returnedDate["day"]!
-//
-//        //URLRequest
-//        guard let url = URL(string: "https://food.podac.poapper.com/v1/menus/\(year)/\(month)/\(day)") else { fatalError("Missing URL") }
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = "GET"
-//
-//        let task = session.dataTask(with: urlRequest) { (url, response, error) in
-//
-//            if error != nil { return }
-//
-//            guard let response = response as? HTTPURLResponse else { return }
-//
-//            if response.statusCode == 200 {
-//                print(url!)
-//            }
-//        }
-//        task.resume()
-//    }
 
     //Devide Data
     func saveAtUserDefaults() {
